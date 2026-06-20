@@ -1,0 +1,10 @@
+# ============================================================
+# SmartOffice PeepPrevention - PC Client Dependencies
+# ============================================================
+# 安装命令: pip install -r requirements.txt
+
+PyQt6>=6.5.0            # 全屏遮罩UI框架（跨平台）
+pyserial>=3.5           # 串口通信
+PyYAML>=6.0             # YAML配置文件解析
+pygame>=2.5.0           # 报警音频播放（跨平台替代方案）
+pyobjc>=9.0; sys_platform == 'darwin'  # macOS锁屏支持

@@ -1,0 +1,16 @@
+# Top-level ignores for SmartOffice project
+.DS_Store
+Thumbs.db
+
+# Firmware build and IDE artifacts
+firmware/.pio/
+firmware/.vscode/
+
+# Python caches and local environments
+pc_client/__pycache__/
+pc_client/.venv/
+tests/__pycache__/
+
+# OS/editor temporary files
+*.tmp
+*.log

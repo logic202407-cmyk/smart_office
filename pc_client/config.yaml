@@ -1,0 +1,54 @@
+# ============================================================
+# SmartOffice PeepPrevention - 默认配置文件
+# ============================================================
+# 首次运行自动生成，用户可修改
+
+# --- 串口配置 ---
+serial:
+  port: ""                  # 自动检测端口（如 COM3, /dev/ttyUSB0, /dev/tty.usbserial-*）
+  baudrate: 115200          # 波特率
+  timeout: 0.5              # 串口读取超时（秒）
+  reconnect_delay_min: 1.0  # 重连最小延迟（秒）
+  reconnect_delay_max: 60.0 # 重连最大延迟（秒）
+  reconnect_backoff: 2.0    # 指数退避因子
+
+# --- 遮罩UI配置 ---
+overlay:
+  # 6级透明度映射（0-255, 0=完全透明, 255=完全不透明）
+  opacity_levels:
+    NORMAL: 0
+    HUMAN_DETECTED: 0
+    APPROACHING: 102       # ~40%
+    SUSPECTED_PEEPING: 153 # ~60%
+    PRIVACY_PROTECT: 204   # ~80%
+    ALARM: 230             # ~90%
+  # 遮罩颜色 (RGBA)
+  color: [0, 0, 0]         # 黑色遮罩
+  # 警告文字颜色
+  warning_color: [255, 50, 50]
+
+# --- 安全阈值 ---
+thresholds:
+  approaching_cm: 200        # 接近距离阈值（cm）
+  suspected_cm: 120          # 疑似窥视距离阈值（cm）
+  alarm_cm: 60               # 报警距离阈值（cm）
+  lock_screen_delay_sec: 15  # 自动锁屏倒计时（秒）
+  static_energy_warning: 40  # 静止能量警告阈值
+
+# --- 报警配置 ---
+alarm:
+  sound_file: "alarm.wav"    # 报警声音文件路径
+  sound_loop: true           # 是否循环播放
+  sound_volume: 0.7          # 音量 0.0-1.0
+
+# --- 系统托盘 ---
+tray:
+  enable_minimize_to_tray: true  # 关闭窗口时最小化到托盘
+  show_toast_on_state: true      # 状态变化时显示提示
+
+# --- 日志 ---
+logging:
+  level: "INFO"             # DEBUG, INFO, WARNING, ERROR
+  file: "peep_prevention.log"
+  max_size_mb: 10
+  backup_count: 3
