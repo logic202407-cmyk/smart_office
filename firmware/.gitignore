@@ -3,3 +3,6 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+# Local network credentials. Keep this file out of version control.
+include/wifi_credentials.h

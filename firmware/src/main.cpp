@@ -4,6 +4,7 @@
 #include "oled_ui.h"
 #include "paj7620.h"
 #include "privacy_state_machine.h"
+#include "wifi_telemetry.h"
 
 static LD2410B radar;
 static PrivacyStateMachine privacyMachine;
@@ -88,7 +89,7 @@ static uint16_t selectPrimaryDistanceMm(const LD2410B_TargetInfo& info)
     }
 
     // Prefer classified target distances over unclassified detect_dist.
-    // detect_dist is the closest gate with energy â€” it gets stuck on nearby
+    // detect_dist is the closest gate with energy â€?it gets stuck on nearby
     // reflections/ghosts when the real target moves away.
     
     if (info.target_state == LD2410B_TARGET_BOTH && info.detect_dist > 0)
@@ -115,17 +116,17 @@ static uint16_t selectPrimaryDistanceMm(const LD2410B_TargetInfo& info)
         // Heuristic: if the gap between the two distances exceeds 30% of
         // the larger, treat them as different people and lock onto whichever
         // is closer to the current display distance (maintains tracking
-        // continuity â€” no sudden jumps to a different person).
+        // continuity â€?no sudden jumps to a different person).
         if (info.static_dist > 0 && info.moving_dist > 0)
         {
             const uint16_t larger  = max(info.static_dist, info.moving_dist);
             const uint16_t smaller = min(info.static_dist, info.moving_dist);
             const uint16_t gap     = larger - smaller;
 
-            // Threshold: 300 â†’ 30%. Floor at 200mm so tiny gaps don't flip.
+            // Threshold: 300 â†?30%. Floor at 200mm so tiny gaps don't flip.
             if (gap > max(larger * 3U / 10U, 200U))
             {
-                // Two different people â€” lock onto the distance closer to
+                // Two different people â€?lock onto the distance closer to
                 // the last known display distance.
                 if (displayDistMm > 0)
                 {
@@ -146,7 +147,7 @@ static uint16_t selectPrimaryDistanceMm(const LD2410B_TargetInfo& info)
         }
 
         // Same person (gates agree), or only one gate valid.
-        // Static is the person's settled position â€” prefer it.
+        // Static is the person's settled position â€?prefer it.
         if (info.static_dist > 0)
             return info.static_dist;
         return info.moving_dist;
@@ -169,6 +170,23 @@ static uint16_t selectPrimaryDistanceMm(const LD2410B_TargetInfo& info)
     }
     
     return 0;
+}
+
+// Experiment distance source: use values from the current LD2410B frame only.
+// No filtering, state memory, target locking, or continuity heuristic is used.
+static uint16_t selectDirectDistanceMm(const LD2410B_TargetInfo& info)
+{
+    if (info.detect_dist > 0)
+    {
+        return info.detect_dist;
+    }
+
+    if (info.static_dist > 0)
+    {
+        return info.static_dist;
+    }
+
+    return info.moving_dist;
 }
 
 static TargetInfo toTargetInfo(const LD2410B_TargetInfo& info, uint16_t displayDistanceMm)
@@ -322,7 +340,7 @@ static void restoreWireBus()
     delayMicroseconds(80);
     Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL);
     Wire.setClock(I2C_FREQ);
-    // No setTimeOut â€” let U8g2 I2C transactions complete naturally
+    // No setTimeOut â€?let U8g2 I2C transactions complete naturally
 }
 
 static void applyGestureAction(uint32_t now, GestureType gesture)
@@ -541,37 +559,55 @@ static void sendStateJson(uint32_t now,
                           PrivacyState state,
                           uint32_t dataAgeMs)
 {
-    Serial.printf("{\"type\":\"state\",\"t_ms\":%lu,\"frames\":%lu,\"present\":%s,\"radar_state\":%u,\"target_state\":%u,\"state\":\"%s\",\"distance_cm\":%u,\"raw_distance_cm\":%u,\"avg_distance_cm\":%u,\"display_distance_cm\":%u,\"trend\":\"%s\",\"hold_ms\":%lu,\"state_hold_ms\":%lu,\"downgrade_hold_ms\":%lu,\"moving_distance_cm\":%u,\"moving_energy\":%u,\"static_distance_cm\":%u,\"static_energy\":%u,\"detect_distance_cm\":%u,\"age_ms\":%lu,\"gesture\":\"%s\",\"gesture_age_ms\":%lu}\n",
-                  now,
-                  radar.getFrameCount(),
-                  present ? "true" : "false",
-                  present ? info.target_state : 0,
-                  present ? info.target_state : 0,
-                  privacyStateToEN(state),
-                  displayDistanceMm / 10,
-                  primaryDistMm / 10,
-                  avgDistMm / 10,
-                  displayDistanceMm / 10,
-                  radarTrendToEN(trend),
-                  holdMs,
-                  privacyMachine.getStateHoldMs(),
-                  privacyMachine.getDowngradeHoldMs(),
-                  present ? info.moving_dist / 10 : 0,
-                  present ? info.moving_energy : 0,
-                  present ? info.static_dist / 10 : 0,
-                  present ? info.static_energy : 0,
-                  present ? info.detect_dist / 10 : 0,
-                  dataAgeMs,
-                  Paj7620::getGestureNameEN(lastGestureEvent),
-                  lastGestureEventMs > 0 ? now - lastGestureEventMs : 0);
+    char buffer[768] = {};
+    const int written = snprintf(buffer, sizeof(buffer),
+                                 "{\"type\":\"state\",\"t_ms\":%lu,\"frames\":%lu,\"present\":%s,\"radar_state\":%u,\"target_state\":%u,\"state\":\"%s\",\"distance_cm\":%u,\"raw_distance_cm\":%u,\"avg_distance_cm\":%u,\"display_distance_cm\":%u,\"trend\":\"%s\",\"hold_ms\":%lu,\"state_hold_ms\":%lu,\"downgrade_hold_ms\":%lu,\"moving_distance_cm\":%u,\"moving_energy\":%u,\"static_distance_cm\":%u,\"static_energy\":%u,\"detect_distance_cm\":%u,\"age_ms\":%lu,\"gesture\":\"%s\",\"gesture_age_ms\":%lu}",
+                                 now, radar.getFrameCount(), present ? "true" : "false",
+                                 present ? info.target_state : 0, present ? info.target_state : 0,
+                                 privacyStateToEN(state), displayDistanceMm / 10, primaryDistMm / 10,
+                                 avgDistMm / 10, displayDistanceMm / 10, radarTrendToEN(trend), holdMs,
+                                 privacyMachine.getStateHoldMs(), privacyMachine.getDowngradeHoldMs(),
+                                 present ? info.moving_dist / 10 : 0, present ? info.moving_energy : 0,
+                                 present ? info.static_dist / 10 : 0, present ? info.static_energy : 0,
+                                 present ? info.detect_dist / 10 : 0, dataAgeMs,
+                                 Paj7620::getGestureNameEN(lastGestureEvent),
+                                 lastGestureEventMs > 0 ? now - lastGestureEventMs : 0);
+    if (written > 0 && written < static_cast<int>(sizeof(buffer)))
+    {
+        const String line(buffer);
+        Serial.println(line);
+        wifiTelemetryMirrorJson(line);
+    }
+}
+
+static void sendEngineeringJson(uint32_t now, const LD2410B_TargetInfo& info)
+{
+    if (!info.engineering_data)
+        return;
+
+    String line = "{\"type\":\"engineering\",\"t_ms\":" + String(now) + ",\"moving_gate_energy\":[";
+    for (uint8_t gate = 0; gate < info.moving_gate_count; ++gate)
+        line += (gate == 0 ? "" : ",") + String(info.moving_gate_energy[gate]);
+    line += "],\"static_gate_energy\":[";
+    for (uint8_t gate = 0; gate < info.static_gate_count; ++gate)
+        line += (gate == 0 ? "" : ",") + String(info.static_gate_energy[gate]);
+    line += "],\"light\":" + String(info.light_level) + ",\"out\":" + String(info.out_state) + "}";
+    Serial.println(line);
+    wifiTelemetryMirrorJson(line);
 }
 
 static void sendGestureJson(uint32_t now, GestureType gesture, uint8_t rawGesture)
 {
-    Serial.printf("{\"type\":\"gesture\",\"t_ms\":%lu,\"gesture\":\"%s\",\"raw\":%u}\n",
-                  now,
-                  Paj7620::getGestureNameEN(gesture),
-                  rawGesture);
+    char buffer[128] = {};
+    const int written = snprintf(buffer, sizeof(buffer),
+                                 "{\"type\":\"gesture\",\"t_ms\":%lu,\"gesture\":\"%s\",\"raw\":%u}",
+                                 now, Paj7620::getGestureNameEN(gesture), rawGesture);
+    if (written > 0 && written < static_cast<int>(sizeof(buffer)))
+    {
+        const String line(buffer);
+        Serial.println(line);
+        wifiTelemetryMirrorJson(line);
+    }
 }
 
 void setup()
@@ -585,6 +621,8 @@ void setup()
 
     pinMode(PIN_LED, OUTPUT);
     digitalWrite(PIN_LED, LOW);
+
+    wifiTelemetryBegin();
 
     Serial.println();
     Serial.println("====================================");
@@ -617,7 +655,13 @@ void setup()
 
     if (radar.begin())
     {
-        Serial.println("[RADAR] begin OK, privacy state test running...");
+        Serial.println("[RADAR] begin OK, enabling engineering telemetry...");
+        delay(80);
+        radar.enableConfig();
+        delay(80);
+        radar.setEngineeringMode(true);
+        delay(80);
+        radar.disableConfig();
     }
     else
     {
@@ -627,6 +671,7 @@ void setup()
 
 void loop()
 {
+    wifiTelemetryPoll();
     radar.update();
 
     const uint32_t now = millis();
@@ -636,7 +681,7 @@ void loop()
     {
         const LD2410B_TargetInfo& info = radar.getTargetInfo();
         const bool present = info.valid && info.target_state != LD2410B_TARGET_NONE;
-        const uint16_t primaryDistMm = selectPrimaryDistanceMm(info);
+        const uint16_t primaryDistMm = selectDirectDistanceMm(info);
 
         if (present && primaryDistMm > 0)
         {
@@ -663,7 +708,7 @@ void loop()
         const uint32_t dataAgeMs = info.valid ? now - info.timestamp : 0;
         const bool fresh = info.valid && dataAgeMs <= DATA_STALE_MS;
         const bool present = fresh && info.target_state != LD2410B_TARGET_NONE;
-        const uint16_t primaryDistMm = present ? selectPrimaryDistanceMm(info) : 0;
+        const uint16_t primaryDistMm = present ? selectDirectDistanceMm(info) : 0;
         const uint16_t avgDistMm = present ? averageDistanceMm() : 0;
         const RadarTrend trend = present ? calculateTrend(avgDistMm) : RadarTrend::NONE;
         const uint16_t filteredDistMm = present ? filteredDistanceMm() : 0;
@@ -691,6 +736,7 @@ void loop()
                       dataAgeMs);
 
         sendStateJson(now, info, present, primaryDistMm, avgDistMm, displayDistanceMm, trend, holdMs, state, dataAgeMs);
+        sendEngineeringJson(now, info);
 
         if (present)
         {
