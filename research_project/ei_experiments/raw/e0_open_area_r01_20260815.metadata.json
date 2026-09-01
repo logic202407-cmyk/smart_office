@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "trial_id": "e0_open_area_r01_20260815",
+  "operator": "",
+  "scenario": "open_area_no_person_no_near_static_object",
+  "transport": {
+    "kind": "tcp",
+    "host": "192.168.1.9",
+    "port": 3333,
+    "timeout_s": 0.25
+  },
+  "capture_started_utc": "2026-08-15T03:31:13.548+00:00",
+  "requested_duration_s": 30.0,
+  "tool": "tools/ei_capture_tcp.py",
+  "data_status": "raw_complete_pending_annotation",
+  "capture_finished_utc": "2026-08-15T03:31:43.551+00:00",
+  "actual_duration_s": 30.0,
+  "record_counts": {
+    "measurement": 0,
+    "state": 473,
+    "heartbeat": 0,
+    "json_other": 473,
+    "json_non_object": 0,
+    "non_json": 0
+  }
+}

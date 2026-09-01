@@ -1,0 +1,25 @@
+{
+    "schema_version":  "1.0",
+    "trial_id":  "empty_scene_engineering_parser_fix_r01",
+    "operator":  "",
+    "scenario":  "empty_scene_after_factory_reset_and_engineering_parser_fix",
+    "serial":  {
+                   "port":  "COM13",
+                   "baud":  115200,
+                   "timeout_s":  0.25
+               },
+    "capture_started_utc":  "2026-08-13T16:17:24.8437038Z",
+    "requested_duration_s":  30,
+    "tool":  "tools/ei_capture_serial.ps1",
+    "data_status":  "raw_complete_pending_annotation",
+    "capture_finished_utc":  "2026-08-13T16:17:54.9900679Z",
+    "actual_duration_s":  30.015,
+    "record_counts":  {
+                          "measurement":  0,
+                          "state":  495,
+                          "heartbeat":  0,
+                          "json_other":  0,
+                          "json_non_object":  0,
+                          "non_json":  497
+                      }
+}

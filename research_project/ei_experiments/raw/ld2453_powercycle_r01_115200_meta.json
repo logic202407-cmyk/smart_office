@@ -1,0 +1,33 @@
+﻿{
+    "schema_version":  "1.0",
+    "trial_id":  "ld2453_powercycle_r01_115200",
+    "scenario":  "powercycle_recovery",
+    "transport":  {
+                      "kind":  "serial",
+                      "port":  "COM14",
+                      "baud":  115200
+                  },
+    "capture_started_utc":  "2026-08-18T02:26:41.1924115Z",
+    "capture_finished_utc":  "2026-08-18T02:26:46.0986296Z",
+    "clock_anchors":  [
+                          {
+                              "wall_utc":  "2026-08-18T02:26:41.1924115Z",
+                              "monotonic_ms":  0
+                          },
+                          {
+                              "wall_utc":  "2026-08-18T02:26:46.0986296Z",
+                              "monotonic_ms":  5010
+                          }
+                      ],
+    "record_counts":  {
+                          "ld2453_targets":  58,
+                          "parse_errors":  0
+                      },
+    "target_count_histogram":  {
+                                   "0":  0,
+                                   "1":  58,
+                                   "2":  0,
+                                   "3":  0
+                               },
+    "data_status":  "raw_complete_pending_annotation"
+}

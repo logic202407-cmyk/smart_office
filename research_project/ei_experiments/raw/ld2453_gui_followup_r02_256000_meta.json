@@ -1,0 +1,33 @@
+﻿{
+    "schema_version":  "1.0",
+    "trial_id":  "ld2453_gui_followup_r02_256000",
+    "scenario":  "gui_followup_baudcheck",
+    "transport":  {
+                      "kind":  "serial",
+                      "port":  "COM14",
+                      "baud":  256000
+                  },
+    "capture_started_utc":  "2026-08-18T02:25:46.5098302Z",
+    "capture_finished_utc":  "2026-08-18T02:25:51.4334949Z",
+    "clock_anchors":  [
+                          {
+                              "wall_utc":  "2026-08-18T02:25:46.5098302Z",
+                              "monotonic_ms":  0
+                          },
+                          {
+                              "wall_utc":  "2026-08-18T02:25:51.4334949Z",
+                              "monotonic_ms":  5022
+                          }
+                      ],
+    "record_counts":  {
+                          "ld2453_targets":  0,
+                          "parse_errors":  0
+                      },
+    "target_count_histogram":  {
+                                   "0":  0,
+                                   "1":  0,
+                                   "2":  0,
+                                   "3":  0
+                               },
+    "data_status":  "raw_complete_pending_annotation"
+}

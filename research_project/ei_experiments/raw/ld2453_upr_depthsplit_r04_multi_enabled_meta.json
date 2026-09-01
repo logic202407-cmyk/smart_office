@@ -1,0 +1,33 @@
+﻿{
+    "schema_version":  "1.0",
+    "trial_id":  "ld2453_upr_depthsplit_r04_multi_enabled",
+    "scenario":  "two_person_lateral_depthsplit_multi_enabled",
+    "transport":  {
+                      "kind":  "serial",
+                      "port":  "COM14",
+                      "baud":  115200
+                  },
+    "capture_started_utc":  "2026-08-18T02:37:40.7025950Z",
+    "capture_finished_utc":  "2026-08-18T02:38:00.6125765Z",
+    "clock_anchors":  [
+                          {
+                              "wall_utc":  "2026-08-18T02:37:40.7025950Z",
+                              "monotonic_ms":  0
+                          },
+                          {
+                              "wall_utc":  "2026-08-18T02:38:00.6125765Z",
+                              "monotonic_ms":  20006
+                          }
+                      ],
+    "record_counts":  {
+                          "ld2453_targets":  236,
+                          "parse_errors":  0
+                      },
+    "target_count_histogram":  {
+                                   "0":  0,
+                                   "1":  236,
+                                   "2":  0,
+                                   "3":  0
+                               },
+    "data_status":  "raw_complete_pending_annotation"
+}

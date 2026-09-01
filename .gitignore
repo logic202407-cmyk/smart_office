@@ -10,6 +10,7 @@ firmware/.vscode/
 pc_client/__pycache__/
 pc_client/.venv/
 tests/__pycache__/
+**/__pycache__/
 
 # OS/editor temporary files
 *.tmp

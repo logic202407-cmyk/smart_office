@@ -1,0 +1,33 @@
+﻿{
+    "schema_version":  "1.0",
+    "trial_id":  "ld2453_u1_single_person_r02",
+    "scenario":  "U1_single_person_fixed_install_repeat",
+    "transport":  {
+                      "kind":  "serial",
+                      "port":  "COM14",
+                      "baud":  115200
+                  },
+    "capture_started_utc":  "2026-08-17T06:59:03.9342409Z",
+    "capture_finished_utc":  "2026-08-17T06:59:33.8166860Z",
+    "clock_anchors":  [
+                          {
+                              "wall_utc":  "2026-08-17T06:59:03.9342409Z",
+                              "monotonic_ms":  0
+                          },
+                          {
+                              "wall_utc":  "2026-08-17T06:59:33.8166860Z",
+                              "monotonic_ms":  30002
+                          }
+                      ],
+    "record_counts":  {
+                          "ld2453_targets":  353,
+                          "parse_errors":  0
+                      },
+    "target_count_histogram":  {
+                                   "0":  0,
+                                   "1":  353,
+                                   "2":  0,
+                                   "3":  0
+                               },
+    "data_status":  "raw_complete_pending_annotation"
+}

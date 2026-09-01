@@ -1,0 +1,25 @@
+{
+    "schema_version":  "1.0",
+    "trial_id":  "ceiling_confirmed_empty_static_gate01_50_r01",
+    "operator":  "",
+    "scenario":  "confirmed_empty_ceiling_direction_after_static_gate0_gate1_set_to_50",
+    "serial":  {
+                   "port":  "COM13",
+                   "baud":  115200,
+                   "timeout_s":  0.25
+               },
+    "capture_started_utc":  "2026-08-13T16:55:49.3646628Z",
+    "requested_duration_s":  10,
+    "tool":  "tools/ei_capture_serial.ps1",
+    "data_status":  "raw_complete_pending_annotation",
+    "capture_finished_utc":  "2026-08-13T16:55:59.5349995Z",
+    "actual_duration_s":  10.037,
+    "record_counts":  {
+                          "measurement":  0,
+                          "state":  165,
+                          "heartbeat":  0,
+                          "json_other":  0,
+                          "json_non_object":  0,
+                          "non_json":  167
+                      }
+}

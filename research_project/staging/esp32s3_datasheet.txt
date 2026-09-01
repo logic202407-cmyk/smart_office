@@ -1,0 +1,3595 @@
+ESP32-S3-WROOM-1
+ESP32-S3-WROOM-1U
+                                 1.8
+
+
+
+                                      ®
+ 2.4 GHz Wi-Fi (802.11b/g/n) +            5
+                                  ®
+     ESP32-S3              Xtensa             32   LX7
+ Flash          16 MB   PSRAM                 16 MB
+     36    GPIO
+     PCB
+
+
+
+
+                  ESP32-S3-WROOM-1                    ESP32-S3-WROOM-1U
+
+
+
+
+                                       www.espressif.com
+1
+
+
+
+1
+
+
+      https://www.espressif.com/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_cn.pdf
+
+
+
+
+1.1
+
+CPU                                                                     – 4           strapping
+
+                                                                  • SPI     LCD     Camera        UART I2C        I2S
+      •         ESP32-S3                 Xtensa®         32
+                                                                                               LED PWM         USB 2.0
+          LX7            (                           )
+                                                                      OTG USB          /JTAG              MCPWM     SD/
+                240 MHz
+                                                                                                           ®
+                                                                      MMC                   GDMA TWAI
+      • 384 KB ROM                                                    ISO 11898-1     ADC
+      • 512 KB SRAM
+
+      • 16 KB RTC SRAM
+
+      •         16 MB PSRAM
+                                                                  • 40 MHz
+
+Wi-Fi                                                             •        16 MB Quad SPI flash
+
+      • 802.11b/g/n
+
+      • 802.11n                           150 Mbps
+                                                                  • ESP32-S3-WROOM-1                PCB
+      •           (TX/RX A-MPDU, TX/RX A-MSDU)
+                                                                  • ESP32-S3-WROOM-1U
+      • 0.4 µs
+
+      •                             2412 ~ 2484 MHz
+
+
+                                                                  •             /            3.0 ~ 3.6 V
+
+      •                 (Bluetooth LE)    Bluetooth 5             •
+          Bluetooth mesh                                                – 65 °C              40 ~ 65 °C
+      •             125 Kbps    500 Kbps 1 Mbps 2                       – 85 °C              40 ~ 85 °C
+          Mbps
+                                                                        – 105 °C             40 ~ 105 °C
+      •             (Advertising Extensions)
+
+      •           (Multiple Advertisement Sets)
+
+      •             (Channel Selection Algorithm #2)              • RF
+
+      • Wi-Fi                                                     •                 RoHS/REACH
+
+
+
+
+      • 36       GPIO                                             • HTOL/HTSL/uHAST/TCT/ESD
+
+
+                                                              2               ESP32-S3-WROOM-1 & WROOM-1U               v1.8
+1
+
+
+
+1.2
+ESP32-S3-WROOM-1        ESP32-S3-WROOM-1U                     Wi-Fi +              MCU                 ESP32-S3
+                                                                                                         AIoT
+
+
+
+
+ESP32-S3-WROOM-1         PCB                ESP32-S3-WROOM-1U
+                          1-1    1-2          ESP32-S3-WROOM-1-H4            ESP32-S3-WROOM-1U-H4
+          40 ~ 105 °C       ESP32-S3R8        ESP32-S3R16V                             40 ~ 65 °C
+                  40 ~ 85 °C                   R8    R16V            (       Octal SPI PSRAM)                PSRAM
+ECC                                        85 °C          PSRAM                     1/16
+
+                                      1-1. ESP32-S3-WROOM-1                   1
+
+                                                                                              5               6
+             2                               Flash3, 4            PSRAM4
+                                                                                       (°C)           (mm)
+      ESP32-S3-WROOM-1-N4                 4 MB (Quad SPI)                -           40 ~ 85
+      ESP32-S3-WROOM-1-N8                 8 MB (Quad SPI)                -           40 ~ 85
+      ESP32-S3-WROOM-1-N16                16 MB (Quad SPI)               -           40 ~ 85
+                                                                                                      18.0
+      ESP32-S3-WROOM-1-H4                 4 MB (Quad SPI)                -           40 ~ 105
+                                                                                                       ×
+      ESP32-S3-WROOM-1-N4R2               4 MB (Quad SPI)     2 MB (Quad SPI)        40 ~ 85
+                                                                                                      25.5
+      ESP32-S3-WROOM-1-N8R2               8 MB (Quad SPI)     2 MB (Quad SPI)        40 ~ 85
+                                                                                                       ×
+      ESP32-S3-WROOM-1-N16R2              16 MB (Quad SPI)    2 MB (Quad SPI)        40 ~ 85
+                                                                                                       3.1
+      ESP32-S3-WROOM-1-N4R8               4 MB (Quad SPI)     8 MB (Octal SPI)       40 ~ 65
+      ESP32-S3-WROOM-1-N8R8               8 MB (Quad SPI)     8 MB (Octal SPI)       40 ~ 65
+      ESP32-S3-WROOM-1-N16R8              16 MB (Quad SPI)    8 MB (Octal SPI)       40 ~ 65
+      ESP32-S3-WROOM-1-N16R16VA7          16 MB (Quad SPI)    16 MB (Octal SPI)      40 ~ 65
+      1                         1-2
+
+                                      1-2. ESP32-S3-WROOM-1U
+
+                                                                                               5              6
+             2                                Flash3, 4           PSRAM4
+                                                                                       (°C)           (mm)
+      ESP32-S3-WROOM-1U-N4                 4 MB (Quad SPI)               -            40 ~ 85
+      ESP32-S3-WROOM-1U-N8                 8 MB (Quad SPI)               -            40 ~ 85
+      ESP32-S3-WROOM-1U-N16               16 MB (Quad SPI)               -            40 ~ 85
+                                                                                                       18.0
+      ESP32-S3-WROOM-1U-H4                 4 MB (Quad SPI)               -           40 ~ 105
+                                                                                                        ×
+      ESP32-S3-WROOM-1U-N4R2               4 MB (Quad SPI)     2 MB (Quad SPI)        40 ~ 85
+                                                                                                       19.2
+      ESP32-S3-WROOM-1U-N8R2               8 MB (Quad SPI)     2 MB (Quad SPI)        40 ~ 85
+                                                                                                        ×
+      ESP32-S3-WROOM-1U-N16R2             16 MB (Quad SPI)     2 MB (Quad SPI)        40 ~ 85
+                                                                                                       3.2
+      ESP32-S3-WROOM-1U-N4R8               4 MB (Quad SPI)     8 MB (Octal SPI)       40 ~ 65
+      ESP32-S3-WROOM-1U-N8R8               8 MB (Quad SPI)     8 MB (Octal SPI)       40 ~ 65
+      ESP32-S3-WROOM-1U-N16R8             16 MB (Quad SPI)     8 MB (Octal SPI)       40 ~ 65
+      ESP32-S3-WROOM-1U-N16R16VA7         16 MB (Quad SPI)    16 MB (Octal SPI)       40 ~ 65
+
+
+
+
+                                                         3              ESP32-S3-WROOM-1 & WROOM-1U               v1.8
+1
+
+
+
+        2          ESP32-S3-WROOM-1-H4 ESP32-S3-WROOM-1U-H4                     ESP32-S3-WROOM-1U-N16R16VA
+
+        3                   SPI flash                             80 MHz                                    120
+            MHz   flash                  flash
+        4                               PSRAM                                                  6.5
+        5
+        6                                           10.1
+        7          ESP32-S3-WROOM-1-N16R16VA                ESP32-S3-WROOM-1U-N16R16VA           VDD_SPI     1.8
+            V
+
+
+                       ESP32-S3                  ESP32-S3               Xtensa® 32       LX7
+                                  240 MHz         CPU
+
+
+
+
+            ESP32-S3                     ESP32-S3
+                                        ESP-IDF                                           ESP32-S3
+    >
+
+
+
+
+1.3
+    •                                                             •               IoT
+
+    •                                                             •               IoT
+
+    •                                                             •
+
+    •                                                             • USB
+
+    •                                                             •
+
+    • POS                                                         •
+
+    •                                                             • Wi-Fi +
+
+    •                                                             •
+
+
+
+
+                                                              4               ESP32-S3-WROOM-1 & WROOM-1U      v1.8
+1                                                                                        2
+1.1                                                                                      2
+1.2                                                                                      3
+1.3                                                                                      4
+
+2                                                                                        9
+
+
+3                                                                                       10
+3.1                                                                                     10
+3.2                                                                                     11
+
+4                                                                                       13
+4.1                                                                                     14
+4.2   VDD_SPI                                                                           15
+4.3   ROM                                                                               15
+4.4   JTAG                                                                              15
+4.5                                                                                     16
+
+5                                                                                       17
+5.1                                                                                     17
+5.2                                                                                     17
+      5.2.1                                                                             17
+              5.2.1.1    UART                                                           17
+              5.2.1.2    I2C                                                            18
+              5.2.1.3    I2S                                                            18
+              5.2.1.4    LCD    Camera                                                  18
+              5.2.1.5                  (SPI)                                            19
+                                               ®
+              5.2.1.6                  (TWAI )                                         20
+              5.2.1.7    USB 2.0 OTG                                                    21
+              5.2.1.8    USB       /JTAG                                               22
+              5.2.1.9    SD/MMC                                                        22
+              5.2.1.10   LED PWM                                                       23
+              5.2.1.11                         (MCPWM)                                 23
+              5.2.1.12             (RMT)                                               24
+              5.2.1.13                     (PCNT)                                      24
+      5.2.2                                                                            25
+              5.2.2.1    SAR ADC                                                       25
+              5.2.2.2                                                                  25
+              5.2.2.3                                                                  25
+
+6                                                                                      26
+6.1                                                                                    26
+6.2                                                                                    26
+
+
+                                                    5    ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+6.3                     (3.3 V, 25 °C)                                             26
+6.4                                                                                27
+       6.4.1   Active                                                              27
+       6.4.2                                                                       27
+6.5                                                                                29
+
+7                                                                                  30
+7.1    Wi-Fi                                                                       30
+       7.1.1   Wi-Fi               (TX)                                            30
+       7.1.2   Wi-Fi               (RX)                                             31
+7.2                                                                                32
+       7.2.1                              (TX)                                     32
+       7.2.2                              (RX)                                     34
+
+8                                                                                  37
+
+
+9                                                                                  39
+
+
+10                                                                                 40
+10.1                                                                               40
+10.2                                                                                41
+
+11 PCB                                                                             43
+11.1   PCB                                                                         43
+11.2   PCB                                                                         44
+
+12                                                                                 45
+12.1                                                                               45
+12.2            (ESD)                                                              45
+12.3                                                                               45
+12.4                                                                               46
+
+                                                                                   47
+
+
+                                                                                   48
+
+
+                                                                                   49
+
+
+
+
+                                                 6   ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+1-1    ESP32-S3-WROOM-1                        1                                       3
+1-2    ESP32-S3-WROOM-1U                                                               3
+3-1                                                                                   11
+4-1    Strapping                                                                      13
+4-2 Strapping                                                                         14
+4-3                                                                                   14
+4-4 VDD_SPI                                                                           15
+4-5 JTAG                                                                              15
+4-6                                                                                   16
+6-1                                                                                  26
+6-2                                                                                  26
+6-3                      (3.3 V, 25 °C)                                              26
+6-4 Active               Wi-Fi (2.4 GHz)                                             27
+6-5 Active                                                                           27
+6-6 Modem-sleep                                                                      28
+6-7                                                                                  28
+6-8 Flash                                                                            29
+6-9 PSRAM                                                                            29
+7-1    Wi-Fi                                                                         30
+7-2                  EVM         802.11                                              30
+7-3            EVM     1                                                             30
+7-4                                                                                   31
+7-5                                                                                  32
+7-6                                                                                  32
+7-7                                                                                  32
+7-8                  -              - 1 Mbps                                         32
+7-9                  -              - 2 Mbps                                         33
+7-10                 -              - 125 Kbps                                       33
+7-11                 -              - 500 Kbps                                       33
+7-12                 -              - 1 Mbps                                         34
+7-13                 -              - 2 Mbps                                         34
+7-14                 -              - 125 Kbps                                       35
+7-15                 -              - 500 Kbps                                       35
+
+
+
+
+                                                   7   ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+2-1    ESP32-S3-WROOM-1                                              9
+2-2 ESP32-S3-WROOM-1U                                                9
+3-1                                                                 10
+4-1    Strapping                                                    14
+4-2                                                                 16
+8-1    ESP32-S3-WROOM-1                                            37
+8-2 ESP32-S3-WROOM-1U                                              38
+9-1                                                                39
+10-1 ESP32-S3-WROOM-1                                              40
+10-2 ESP32-S3-WROOM-1U                                             40
+10-3                                                                41
+11-1 ESP32-S3-WROOM-1     PCB                                      43
+11-2 ESP32-S3-WROOM-1U     PCB                                     44
+12-1                                                               45
+
+
+
+
+                                 8   ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+                                   QSPI Flash
+2
+
+
+
+2
+
+                                                      ESP32-S3-WROOM-1
+                                    40 MHz
+            3V3                     Crystal                             Antenna
+
+
+                                ESP32-S3
+                                ESP32-S3R2               RF Matching
+                                ESP32-S3R8
+                          EN    ESP32-S3R16V                  GPIOs
+                                        PSRAM(opt.)
+                                        (QSPI/OSPI)
+
+
+
+
+                                 VDD_SPI
+                                 SPICS0
+                                 SPICLK
+
+
+
+
+                                 SPIWP
+                                 SPIHD
+                                 SPIQ
+                                 SPID
+
+
+
+                                  QSPI Flash
+
+
+
+                               2-1. ESP32-S3-WROOM-1
+
+
+
+
+                                                      ESP32-S3-WROOM-1U
+                                    40 MHz
+            3V3                     Crystal                                       Antenna
+
+
+                                 ESP32-S3
+                                 ESP32-S3R2               RF Matching
+                                 ESP32-S3R8
+                          EN     ESP32-S3R16V                 GPIOs
+                                        PSRAM(opt.)
+                                        (QSPI/OSPI)
+                                 VDD_SPI
+                                 SPICS0
+                                 SPICLK
+
+
+
+
+                                 SPIWP
+                                 SPIHD
+                                 SPIQ
+                                 SPID
+
+
+
+
+                                   QSPI Flash
+
+
+
+                               2-2. ESP32-S3-WROOM-1U
+
+
+
+                  PSRAM                       ESP32-S3                       >              flash/
+    PSRAM
+                                                      ESP32-S3-WROOM-1
+                                    40 MHz
+            3V3                     Crystal                             Antenna
+
+
+                                ESP32-S3
+                                ESP32-S3R2               RF Matching
+                                ESP32-S3R8
+                          EN    ESP32-S3R16V                  GPIOs
+                                       PSRAM(opt.)
+                                       (QSPI/OSPI)
+                                VDD_SPI
+                                SPICS0
+                                SPICLK
+
+
+
+
+                                SPIWP
+                                SPIHD
+                                SPIQ
+                                SPID
+
+
+
+
+                                               9              ESP32-S3-WROOM-1 & WROOM-1U        v1.8
+                                  QSPI Flash
+3
+
+
+
+3
+
+3.1
+                                                                                                          10.1
+
+
+
+
+                                                          Keepout Zone
+
+
+
+
+             GND        1                                                                                               40   GND
+
+              3V3       2                                                                                               39   IO1
+
+              EN        3                                                                                               38   IO2
+
+              IO4       4                                                                                               37   TXD0
+
+              IO5       5                                                                                               36   RXD0
+
+              IO6       6                        GND      GND      GND                                                  35   IO42
+
+              IO7       7                        GND
+                                                           41
+                                                          GND
+                                                                   GND                                                  34   IO41
+
+             IO15       8                        GND      GND      GND                                                  33   IO40
+
+             IO16       9                                                                                               32   IO39
+
+             IO17       10                                                                                              31   IO38
+
+             IO18       11                                                                                              30   IO37
+
+              IO8       12                                                                                              29   IO36
+
+             IO19       13                                                                                              28   IO35
+
+             IO20       14                                                                                              27   IO0
+                                                                            21
+
+                                                                                   22
+                                                                20
+
+
+
+
+                                                                                          23
+
+                                                                                                   24
+
+
+
+                                                                                                                 26
+                                                                                                          25
+                                   16
+
+                                          17
+
+                                                18
+
+                                                        19
+                             15
+
+
+
+
+                                                        IO11
+
+
+
+
+                                                                                          IO21
+                                                                IO12
+                                                IO10
+
+
+
+
+                                                                                   IO14
+                             IO3
+
+                                   IO46
+
+
+
+
+                                                                            IO13
+
+
+
+
+                                                                                                   IO47
+                                          IO9
+
+
+
+
+                                                                                                          IO48
+
+                                                                                                                 IO45
+
+
+
+
+                                                       3-1.
+
+
+
+
+    ESP32-S3-WROOM-1U                     ESP32-S3-WROOM-1
+                                                          ESP32-S3                                    >
+
+
+
+
+                                                                       10                        ESP32-S3-WROOM-1 & WROOM-1U        v1.8
+3
+
+
+
+3.2
+            41                      3-1
+
+                                                             ESP32-S3
+
+                                                 3-1.
+
+                            a
+      GND        1     P
+      3V3        2     P
+
+
+      EN         3      I
+                                            EN
+      IO4        4    I/O/T     RTC_GPIO4, GPIO4, TOUCH4, ADC1_CH3
+      IO5        5    I/O/T     RTC_GPIO5, GPIO5, TOUCH5, ADC1_CH4
+      IO6        6    I/O/T     RTC_GPIO6, GPIO6, TOUCH6, ADC1_CH5
+      IO7        7    I/O/T     RTC_GPIO7, GPIO7, TOUCH7, ADC1_CH6
+      IO15       8    I/O/T     RTC_GPIO15, GPIO15, U0RTS, ADC2_CH4, XTAL_32K_P
+      IO16       9    I/O/T     RTC_GPIO16, GPIO16, U0CTS, ADC2_CH5, XTAL_32K_N
+      IO17       10   I/O/T     RTC_GPIO17, GPIO17, U1TXD, ADC2_CH6
+      IO18       11   I/O/T     RTC_GPIO18, GPIO18, U1RXD, ADC2_CH7, CLK_OUT3
+      IO8        12   I/O/T     RTC_GPIO8, GPIO8, TOUCH8, ADC1_CH7, SUBSPICS1
+      IO19       13   I/O/T     RTC_GPIO19, GPIO19, U1RTS, ADC2_CH8, CLK_OUT2, USB_D-
+      IO20       14   I/O/T     RTC_GPIO20, GPIO20, U1CTS, ADC2_CH9, CLK_OUT1, USB_D+
+      IO3        15   I/O/T     RTC_GPIO3, GPIO3, TOUCH3, ADC1_CH2
+      IO46       16   I/O/T     GPIO46
+      IO9        17   I/O/T     RTC_GPIO9, GPIO9, TOUCH9, ADC1_CH8, FSPIHD, SUBSPIHD
+                                RTC_GPIO10, GPIO10, TOUCH10, ADC1_CH9, FSPICS0, FSPIIO4,
+      IO10       18   I/O/T
+                                SUBSPICS0
+      IO11       19   I/O/T     RTC_GPIO11, GPIO11, TOUCH11, ADC2_CH0, FSPID, FSPIIO5, SUBSPID
+                                RTC_GPIO12, GPIO12, TOUCH12, ADC2_CH1, FSPICLK, FSPIIO6,
+      IO12       20   I/O/T
+                                SUBSPICLK
+      IO13       21   I/O/T     RTC_GPIO13, GPIO13, TOUCH13, ADC2_CH2, FSPIQ, FSPIIO7, SUBSPIQ
+                                RTC_GPIO14, GPIO14, TOUCH14, ADC2_CH3, FSPIWP, FSPIDQS,
+      IO14       22   I/O/T
+                                SUBSPIWP
+      IO21       23   I/O/T     RTC_GPIO21, GPIO21
+      IO47 c     24   I/O/T     SPICLK_P_DIFF, GPIO47, SUBSPICLK_P_DIFF
+      IO48 c     25   I/O/T     SPICLK_N_DIFF, GPIO48, SUBSPICLK_N_DIFF
+      IO45       26   I/O/T     GPIO45
+      IO0        27   I/O/T     RTC_GPIO0, GPIO0
+      IO35 b     28   I/O/T     SPIIO6, GPIO35, FSPID, SUBSPID
+      IO36 b     29   I/O/T     SPIIO7, GPIO36, FSPICLK, SUBSPICLK
+      IO37 b     30   I/O/T     SPIDQS, GPIO37, FSPIQ, SUBSPIQ
+      IO38       31   I/O/T     GPIO38, FSPIWP, SUBSPIWP
+
+
+
+
+                                                        11          ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+3
+
+
+                                                  3-1 –
+                             a
+    IO39        32    I/O/T       MTCK, GPIO39, CLK_OUT3, SUBSPICS1
+    IO40        33    I/O/T       MTDO, GPIO40, CLK_OUT2
+    IO41        34    I/O/T       MTDI, GPIO41, CLK_OUT1
+    IO42        35    I/O/T       MTMS, GPIO42
+    RXD0        36    I/O/T       U0RXD, GPIO44, CLK_OUT2
+    TXD0        37    I/O/T       U0TXD, GPIO43, CLK_OUT1
+    IO2         38    I/O/T       RTC_GPIO2, GPIO2, TOUCH2, ADC1_CH1
+    IO1         39    I/O/T       RTC_GPIO1, GPIO1, TOUCH1, ADC1_CH0
+    GND         40       P
+    EPAD        41       P
+    aP           I           O          T                                                   28 ∼ 30
+                 eFuse
+    b          Octal SPI PSRAM                    ESP32-S3R8      ESP32-S3R16V                       IO35
+        IO36   IO37                           Octal SPI PSRAM
+    c                 ESP32-S3R16V                        ESP32-S3R16V          VDD_SPI                1.8
+        V                        GPIO   VDD_SPI              GPIO47    GPIO48                1.8 V
+
+
+
+
+                                                     12               ESP32-S3-WROOM-1 & WROOM-1U            v1.8
+4
+
+
+
+4
+
+                        ESP32-S3                           >                         Strapping
+             8
+
+
+
+                                             Strapping          eFuse
+
+
+    •
+
+           – Strapping             GPIO0     GPIO46
+
+    • VDD_SPI
+
+           – Strapping             GPIO45
+
+           – eFuse            EFUSE_VDD_SPI_FORCE              EFUSE_VDD_SPI_TIEH
+
+    • ROM
+
+           – Strapping             GPIO46
+
+           – eFuse            EFUSE_UART_PRINT_CONTROL                EFUSE_DIS_USB_SERIAL_JTAG_ROM_PRINT
+
+    • JTAG
+
+           – Strapping             GPIO3
+
+           – eFuse            EFUSE_DIS_PAD_JTAG EFUSE_DIS_USB_JTAG                        EFUSE_STRAP_JTAG_SEL
+
+        eFuse                           0                           eFuse                              1
+0                eFuse                        ESP32-S3                       >          eFuse
+
+        strapping
+                    /
+
+                                                  4-1. Strapping
+
+                                              Strapping
+                                              GPIO0                              1
+                                              GPIO3                              –
+                                              GPIO45                             0
+                                              GPIO46                             0
+
+
+          strapping                                      /                  ESP32-S3             MCU
+strapping                                   MCU
+
+        strapping                                                                    strapping
+                                                                strapping                                      strapping
+                                   IO
+
+Strapping                                   4-2      4-1
+
+
+
+
+                                                               13                ESP32-S3-WROOM-1 & WROOM-1U         v1.8
+4
+
+
+                                                   4-2. Strapping
+
+                                                                                                             (ms)
+           tSU                                     EN                                                              0
+                                       EN                  strapping                 IO
+           tH                                                                                                      3
+                                        strapping
+
+
+                                                            tSU             tH
+
+
+
+
+                                       VIL_nRST
+                                EN
+
+
+
+
+                                             VIH
+
+
+
+                       Strapping pin
+
+
+                                                    4-1. Strapping
+
+
+
+4.1
+               GPIO0       GPIO46                                          4-3
+
+                                                          4-3.
+
+                                                                           GPIO0     GPIO46
+                                        SPI Boot                             1
+                                        Joint Download Boot 2                0            0
+                                         1
+                                         2 Joint Download Boot
+
+
+                                                   • USB Download Boot
+                                                         – USB-Serial-JTAG Download Boot
+                                                         – USB-OTG Download Boot
+                                                   • UART Download Boot
+
+
+    SPI Boot            ROM                                    SPI flash
+
+    Joint Download Boot                                    USB      UART0                            flash
+        SRAM            SRAM
+
+      SPI Boot   Joint Download Boot                       ESP32-S3              SPI Download Boot
+    ESP32-S3                       >                    Boot
+
+
+
+
+                                                                     14              ESP32-S3-WROOM-1 & WROOM-1U       v1.8
+4
+
+
+
+4.2           VDD_SPI
+                                            EFUSE_VDD_SPI_FORCE
+
+                                                            4-4. VDD_SPI
+
+        VDD_SPI             2                               EFUSE_VDD_SPI_FORCE       GPIO45     EFUSE_VDD_SPI_TIEH
+        VDD3P3_RTC                RSP I         3.3 V                                    0
+                                                                           0
+        Flash                                       1.8 V                                 1
+        Flash                                       1.8 V                                                  0
+                                                                           1
+        VDD3P3_RTC                RSP I         3.3 V                                                      1
+        1
+        2                       ESP32-S3                              >
+
+
+
+4.3           ROM
+                           ROM
+
+        •               UART0     USB      /JTAG
+
+        • USB            /JTAG
+
+        • UART0
+
+                            eFuse                   UART     USB        /JTAG         ROM
+              ESP32-S3                      >                  Boot
+
+
+4.4           JTAG
+                                 GPIO3                  JTAG                                       strapping
+
+
+            4-5          GPIO3      EFUSE_DIS_PAD_JTAG EFUSE_DIS_USB_JTAG                     EFUSE_STRAP_JTAG_SEL
+            JTAG
+
+                                                            4-5. JTAG
+
+JTAG                               EFUSE_DIS_PAD_JTAG EFUSE_DIS_USB_JTAG EFUSE_STRAP_JTAG_SEL GPIO3
+                                             0                                 0                     0
+USB                /JTAG                     0                                 0                     1               1
+                                                1                              0
+
+                    2                        0                                 0                     1               0
+JTAG
+                                             0                                 1
+JTAG                                            1                              1
+    1
+    2        MTDI MTCK MTMS                MTDO
+
+
+
+
+                                                                      15           ESP32-S3-WROOM-1 & WROOM-1U           v1.8
+4
+
+
+
+4.5
+                                                                              EN
+EN                                    4-2           4-6
+
+                                       tST BL                               tRST
+
+                            2.8 V
+            VDDA,
+          VDD3P3,
+      VDD3P3_RTC,
+      VDD3P3_CPU
+
+                           VIL_nRST
+                EN
+
+
+
+                                             4-2.
+
+
+
+                                            4-6.
+
+                                                                                               (µs)
+                     EN                              VDDA VDD3P3     VDD3P3_RTC
+         tST BL                                                                                 50
+                     VDD3P3_CPU
+                     EN         VIL_nRST                       6-3
+         tRST                                                                                   50
+
+
+
+
+                                                          16          ESP32-S3-WROOM-1 & WROOM-1U     v1.8
+5
+
+
+
+5
+
+5.1
+ESP32-S3                               SPI LCD Camera                UART I2C I2S                                  LED
+                                                                      ®
+PWM USB                /JTAG   MCPWM SD/MMC                      TWAI                     ISO 11898-1   CAN
+2.0       ADC                                     ESP32-S3                       USB 2.0 On-The-Go (OTG)
+USB
+
+                                       ESP32-S3                              >
+
+
+
+                       ESP32-S3                   >                         IO
+                ESP32-S3-WROOM-1      ESP32-S3-WROOM-1U
+                                      ESP32-S3                   >        GPIO
+
+
+
+
+5.2
+
+
+5.2.1
+
+
+
+5.2.1.1     UART
+
+ESP32-S3                UART                                   UART0 UART1        UART2                    RS232
+RS485           IrDA                  5 Mbps
+
+
+
+
+      •
+
+      •
+
+      •     UART               FIFO      FIFO         1024 x 8-bit RAM
+
+      •
+
+      •
+
+      •     5/6/7/8
+
+      •     1/1.5/2/3
+
+      •
+
+      •     AT_CMD
+
+      •     RS485
+
+      •     IrDA
+
+      •     GDMA
+
+
+                                                          17                ESP32-S3-WROOM-1 & WROOM-1U            v1.8
+5
+
+
+      •       UART
+
+      •
+
+                          ESP32-S3                      >          UART
+
+
+
+
+            ESP32-S3                           >
+
+
+5.2.1.2       I2C
+
+ESP32-S3               I2C                                                          I2C
+
+
+
+
+      •              (100 Kbit/s)
+
+      •              (400 Kbit/s)
+
+      •                  800 Kbit/s            SCL          SDA
+
+      • 7                    10
+
+      •
+
+                 I2C                                               I2C
+
+                          ESP32-S3                      >          I2C
+
+
+
+
+            ESP32-S3                           >
+
+
+5.2.1.3 I2S
+
+ESP32-S3                     I2S                                                                                   I2S
+          8/16/24/32                                    10 kHz           40 MHz     BCK
+
+I2S                    DMA               TDM PCM            TDM MSB               TDM LSB       TDM Phillips PDM
+
+
+                          ESP32-S3                      >          I2S
+
+
+
+
+            ESP32-S3                           >
+
+
+5.2.1.4       LCD        Camera
+
+ESP32-S3         LCD      Camera                        LCD              Camera
+
+LCD                                                 8       ~ 16           RGB I8080 MOTO6800
+            40 MHz           RGB565   YUV422       YUV420     YUV411
+
+
+
+
+                                                               18                 ESP32-S3-WROOM-1 & WROOM-1U      v1.8
+5
+
+
+Camera                                                           8      ~ 16     DVP
+40 MHz             RGB565      YUV422 YUV420 YUV411
+
+                         ESP32-S3                         >          LCD      Camera
+
+
+
+
+       ESP32-S3                                  >
+
+
+5.2.1.5                           (SPI)
+
+ESP32-S3                 SPI
+
+    • SPI0         ESP32-S3        GDMA                Cache                             flash/PSRAM
+
+    • SPI1         CPU                           flash/PSRAM
+
+    • SPI2           SPI                   GDMA          DMA
+
+    • SPI3           SPI                   GDMA          DMA
+
+
+
+
+    • SPI0        SPI1
+
+          –        SPI     Dual SPI   Quad SPI       Octal SPI   QPI       OPI
+
+          –        SPI                               (SDR)                       (DDR)
+
+          –                               SPI SDR/DDR                          120 MHz
+
+          –
+
+    • SPI2
+
+          –
+
+          –        GDMA           DMA
+
+          –        SPI     Dual SPI   Quad SPI       Octal SPI   QPI       OPI
+
+          –              (CPOL)            (CPHA)
+
+          –
+
+          –
+
+          –                                            (MSB)                             (LSB)
+
+          –
+
+              *                                                       80 MHz
+
+              *          SPI                                          (SDR)
+
+              *                                                                             80 MHz
+
+              *          SPI                                               80 MHz                          40 MHz
+
+              *                SPI_CS                            SPI
+
+              * CS
+
+
+                                                                 19                ESP32-S3-WROOM-1 & WROOM-1U      v1.8
+5
+
+
+          –
+
+               *                                                             60 MHz
+
+               *                                                                         60 MHz
+
+               *          SPI                                                         (SDR)
+
+    • SPI3
+
+          –
+
+          –         GDMA              DMA
+
+          –         SPI        Dual SPI   Quad SPI       QPI
+
+          –                (CPOL)            (CPHA)
+
+          –
+
+          –
+
+          –                                              (MSB)                                (LSB)
+
+          –
+
+               *                                                             80 MHz
+
+               *                                                                         80 MHz
+
+               *                  SPI_CS                                SPI
+
+               * CS
+
+          –
+
+               *                                                             60 MHz
+
+               *                                                                         60 MHz
+
+                               ESP32-S3                        >         SPI
+
+
+
+
+        ESP32-S3                                     >
+
+
+5.2.1.6                               (TWAI® )
+
+                   (Two-Wire Automotive Interface, TWAI® )
+                                                         ESP32-S3                     TWAI
+
+
+
+
+    •         ISO 11898-1              CAN       2.0
+
+    •                     11     ID                      29        ID
+
+    • 1 Kbit/s       1 Mbit/s
+
+    •
+
+          –
+
+
+                                                                        20              ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+5
+
+
+           –
+
+           –
+
+    • 64                  FIFO
+
+    •
+
+    •
+
+           –
+
+           –
+
+           –
+
+           –
+
+                            ESP32-S3                         >
+
+
+
+
+          ESP32-S3                                 >
+
+
+5.2.1.7 USB 2.0 OTG
+
+ESP32-S3                                           USB OTG                      USB 2.0
+
+
+
+
+    •
+
+    •                      (HNP)                       (SRP)                A     B
+
+    •          FIFO (DFIFO)
+
+    •
+
+           – Scatter/Gather DMA
+
+           –         (Buffer) DMA
+
+           – Slave
+
+    •
+
+    •                                                                 USB         /JTAG
+
+    •                                                                 USB OTG         USB      /JTAG
+
+
+
+               (Device mode)
+
+    •          0                              EP0 IN         EP0 OUT
+
+    • 6                   (1 ~ 6)             IN       OUT
+
+    •          5     IN                        EP0 IN
+
+    •          OUT                  RX FIFO
+
+
+
+                                                                 21                   ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+5
+
+
+    •          IN                         TX FIFO
+
+              (Host mode)
+
+    • 8
+
+          –         IN       OUT                                              IN    OUT
+
+          –              7                        IN       OUT
+
+    •                                RX FIFO                     TX FIFO                    TX FIFO     FIFO
+
+                               ESP32-S3                          >      USB OTG
+
+
+
+
+          ESP32-S3                                         >
+
+
+5.2.1.8 USB                     /JTAG
+
+ESP32-S3                            USB        /JTAG
+
+
+
+
+    • USB
+
+    •                         ESP32-S3            USB PHY              GPIO                       PHY
+
+    •                                     CDC-ACM                                          JTAG
+
+    •      2        OUT              3    IN           1               EP_0                 64
+
+    •                 PHY
+
+    • CDC-ACM
+
+    • JTAG                                JTAG                   CPU
+
+    • CDC-ACM
+
+                               ESP32-S3                          >      USB        /JTAG
+
+
+
+
+          ESP32-S3                                         >
+
+
+5.2.1.9 SD/MMC
+
+ESP32-S3                      SD/MMC
+
+
+
+
+    • SD        3.0          3.01
+
+    • SDIO 3.0
+
+    • CE-ATA 1.1
+
+
+
+                                                                       22             ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+5
+
+
+    •               MMC 4.41       eMMC 4.5         4.51
+
+    •         80 MHz
+
+    • 3
+
+           – 1
+
+           – 4                 SD/SDIO/MMC 4.41                      1.8 V             SD
+
+           – 8
+
+
+
+        80 MHz                                           0°   180°               PCB
+
+
+
+
+                        ESP32-S3               >          SD/MMC
+
+
+
+
+          ESP32-S3                       >
+
+
+5.2.1.10      LED PWM
+
+LED PWM
+
+
+
+
+    •                                             1 ms                           14
+
+    •                           APB
+
+    •         Light-sleep
+
+    •                                                     LED RGB
+
+                        ESP32-S3               >          LED PWM
+
+
+
+
+          ESP32-S3                       >
+
+
+5.2.1.11                              (MCPWM)
+
+ESP32-S3               MCPWM                                                 MCPWM
+                     PWM               PWM                              PWM                           PWM
+                                                         PWM                          PWM
+        PWM                        PWM                               PWM                      PWM
+                 PWM                          PWM                    PWM
+
+                        ESP32-S3               >
+
+
+
+
+                                                     23                 ESP32-S3-WROOM-1 & WROOM-1U     v1.8
+5
+
+
+
+
+         ESP32-S3                              >
+
+
+5.2.1.12                  (RMT)
+
+               (RMT)
+
+
+
+
+    •
+
+    •
+
+    •
+
+    • RMT                       384 x 32-bit       RAM
+
+    •
+
+    •
+
+    •
+
+    •
+
+    •
+
+    •              3      DMA
+
+    •              7     DMA
+
+                         ESP32-S3                        >
+
+
+
+
+         ESP32-S3                              >
+
+
+5.2.1.13                           (PCNT)
+
+                (PCNT)
+
+
+
+
+    •                                                                 1 ~ 65535
+
+    •
+
+    •                                     sig_ch0_un                              ctrl_ch0_un
+
+    •                                                        sig_ch0_un   sig_ch1_un              ctrl_ch0_un
+        ctrl_ch1_un
+
+    •
+
+          1.
+
+         2.
+
+
+
+                                                             24           ESP32-S3-WROOM-1 & WROOM-1U           v1.8
+5
+
+
+                    ESP32-S3                  >
+
+
+
+
+        ESP32-S3                       >
+
+
+5.2.2
+
+
+
+5.2.2.1 SAR ADC
+
+ESP32-S3             12    SAR ADC           20                               ESP32-S3   ULP
+                                                                        CPU
+
+                    ESP32-S3                  >
+
+
+
+
+        ESP32-S3                       >
+
+
+5.2.2.2
+
+                                             ADC
+
+                          40 °C   125 °C
+               IO
+
+                    ESP32-S3                  >
+
+
+5.2.2.3
+
+ESP32-S3             14               GPIO
+
+
+                          ESP32-S3
+
+
+
+
+    ESP32-S3                                        (CS)
+
+
+
+                    ESP32-S3                  >
+
+
+
+
+        ESP32-S3                       >
+
+
+
+
+                                                   25      ESP32-S3-WROOM-1 & WROOM-1U         v1.8
+5
+
+
+
+6
+
+6.1
+           6-1
+           6-2
+
+
+
+                                                    6-1.
+
+
+
+                               VDD33                               0.3         3.6       V
+                               TST ORE                              40        105        °C
+
+
+
+6.2
+
+                                                    6-2.
+
+
+
+                       VDD33                                    3.0          3.3         3.6          V
+                       IV DD                                    0.5           —              —        A
+                                             65 °C                                        65
+                       TA                    85 °C                 40         —           85          °C
+                                             105 °C                                      105
+
+
+6.3                            (3.3 V, 25 °C)
+
+                                           6-3.                    (3.3 V, 25 °C)
+
+
+
+    CIN                                                                           —              2                 —      pF
+    VIH                                                                 0.75 × VDD 1             —             1
+                                                                                                            VDD + 0.3     V
+    VIL                                                                            0.3           —         0.25 × VDD 1   V
+    IIH                                                                              —           —                  50    nA
+    IIL                                                                           —              —                  50    nA
+    VOH    2                                                             0.8 × VDD 1             —                   —    V
+    VOL    2                                                                         —           —          0.1 × VDD 1   V
+                               (VDD 1 = 3.3 V, V   OH >= 2.64 V,
+    IOH                                                                              —           40                  —    mA
+                 PAD_DRIVER = 3)
+                               (VDD 1 = 3.3 V, VOL = 0.495 V,
+    IOL                                                                              —           28                  —    mA
+                 PAD_DRIVER = 3)
+    RP U                                                                             —           45                  —    kΩ
+    RP D                                                                          —              45                —      kΩ
+    VIH_nRST                         EN                                 0.75 × VDD 1             —             1
+                                                                                                            VDD + 0.3     V
+    VIL_nRST                    EN                                                 0.3           —         0.25 × VDD 1   V
+
+
+                                                           26                ESP32-S3-WROOM-1 & WROOM-1U                   v1.8
+5
+
+
+
+    1 VDD –
+    2V        VOL
+      OH
+
+
+
+
+6.4
+6.4.1 Active
+
+
+    ESP32-S3                          >
+
+                       3.3 V              25 °C
+
+                             100%
+
+                                      CPU
+
+                                    6-4. Active         Wi-Fi (2.4 GHz)
+
+                                                                                                    (mA)
+                                                    802.11b, 1 Mbps, @20.5 dBm                          355
+                                                    802.11g, 54 Mbps, @18 dBm                           297
+                                    (TX)
+                                                    802.11n, HT20, MCS7, @17.5 dBm                      286
+         Active
+                                                    802.11n, HT40, MCS7, @17 dBm                        285
+                                                    802.11b/g/n, HT20                                    95
+                                    (RX)
+                                                    802.11n, HT40                                        97
+
+
+                                      6-5. Active
+
+                                                                                                    (mA)
+                                                               @ 20.0 dBm                               344
+                                    (TX)                       @ 9.0 dBm                                202
+         Active (        )                                     @ 0 dBm                                  187
+                                                               @ 15.0 dBm                               119
+                                    (RX)                                                                 93
+
+
+
+
+                    ESP32-S3
+
+
+
+
+6.4.2
+                                    PSRAM
+
+
+
+
+                                                         27               ESP32-S3-WROOM-1 & WROOM-1U         v1.8
+5
+
+
+                                                        6-6. Modem-sleep
+
+                                                                                                                    1                  2
+                              (MHz)                                                                         (mA)                (mA)
+                                               WAITI                                                              13.2             18.8
+                                                           32                                                     16.2             21.8
+                                                           32                                                     18.7             24.4
+                                      40                   128                                                    19.9             25.4
+                                                           128                                                    23.0             28.8
+                                               WAITI                                                              22.0             36.1
+                                                           32                                                     28.4             42.6
+                                                           32                                                     33.1             47.3
+                                      80                   128                                                    35.1             49.6
+                                                           128                                                    41.8             56.3
+                                               WAITI                                                              27.6             42.3
+                                                           32                                                     39.9             54.6
+                                                           32                                                     49.6             64.1
+                                    160                    128                                                    54.4             69.2
+    Modem-sleep3
+                                                           128                                                    66.7              81.1
+                                               WAITI                                                              32.9             47.6
+                                                           32                                                     51.2             65.9
+                                                           32                                                  66.2                81.3
+                                    240                    128                                                    72.4              87.9
+                                                           128                                                    91.7             107.9
+    1
+    2
+    3 Modem-sleep                   Wi-Fi                                         flash                   flash                80 Mbit/s
+        SPI                flash               10 mA
+
+
+                                                           6-7.
+
+                                                                                                                        (µA)
+              Light-sleep1    VDD_SPI           Wi-Fi                 GPIO                                              240
+                              ULP                                 ULP-FSM                                                170
+                                           2                      ULP-RISC-V                                            190
+              Deep-sleep                                          3                                                       18
+                              RTC                RTC                                                                      8
+                              RTC                       RTC                                                               7
+                              EN                                                                                           1
+              1 Light-sleep            SPI                                     PSRAM
+                      PSRAM           8 MB 8            PSRAM (3.3 V)        140 µA 8 MB 8     PSRAM (1.8 V)       200 µA
+                  2 MB 4     PSRAM         40 µA
+              2 Deep-sleep                     ULP                                            GPIO           I2C
+              3                                                     ULP                                                   1%
+                                                          18 µA
+
+
+
+                                                                      28               ESP32-S3-WROOM-1 & WROOM-1U                 v1.8
+5
+
+
+
+6.5
+                                                                /
+
+
+
+                                     6-8. Flash
+
+
+
+                       (1.8 V)                    1.65          1.80             2.00     V
+      VCC
+                       (3.3 V)                    2.7               3.3           3.6     V
+      FC                                           80                —             —     MHz
+      —            /                       100,000                   —             —
+      TRET                                         20                —             —
+      TP P                                          —               0.8            5     ms
+      TSE                   (4 KB)                  —               70           500     ms
+      TBE1               (32 KB)                    —               0.2            2      s
+      TBE2               (64 KB)                    —               0.3            3      s
+                            (16 Mb)                 —                7            20      s
+                            (32 Mb)                 —               20            60      s
+      TCE                   (64 Mb)                 —               25           100      s
+                            (128 Mb)                —               60           200      s
+                            (256 Mb)                —               70           300      s
+
+
+                                 6-9. PSRAM
+
+
+
+                           (1.8 V)        1.62           1.80             1.98      V
+             VCC
+                           (3.3 V)         2.7           3.3              3.6       V
+             FC                            80              —               —       MHz
+
+
+
+
+                                         29                     ESP32-S3-WROOM-1 & WROOM-1U    v1.8
+5
+
+
+
+7
+
+
+                       50 Ω
+
+
+    ESP
+
+                         3.3 V (±5%)                25 °C
+
+
+7.1 Wi-Fi
+
+                                       7-1. Wi-Fi
+
+
+
+                                                    2412 ~ 2484 MHz
+                                                    IEEE 802.11b/g/n
+
+
+
+7.1.1 Wi-Fi         (TX)
+
+                       7-2.            EVM          802.11
+
+
+
+                                                            (dBm)     (dBm)    (dBm)
+              802.11b, 1 Mbps                                    —     20.5           —
+              802.11b, 11 Mbps                                   —     20.5           —
+              802.11g, 6 Mbps                                    —     20.0           —
+              802.11g, 54 Mbps                                   —      18.0          —
+              802.11n, HT20, MCS 0                               —      19.0          —
+              802.11n, HT20, MCS 7                               —      17.5          —
+              802.11n, HT40, MCS 0                               —      18.5          —
+              802.11n, HT40, MCS 7                               —      17.0          —
+
+
+                                       7-3.     EVM          1
+
+
+
+                                                         (dB)        (dB)      (dB)
+              802.11b, 1 Mbps, @20.5 dBm                     —        24.5            10
+              802.11b, 11 Mbps, @20.5 dBm                    —        24.5            10
+              802.11g, 6 Mbps, @20 dBm                       —        23.0            5
+              802.11g, 54 Mbps, @18 dBm                      —        29.5        25
+              802.11n, HT20, MCS 0, @19 dBm                  —        24.0            5
+              802.11n, HT20, MCS 7, @17.5 dBm                —       30.5         27
+              802.11n, HT40, MCS 0, @18.5 dBm                —       25.0             5
+
+
+
+
+                                              30                 ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+5
+
+
+                                          7-3 –
+
+
+                                                     (dB)         (dB)      (dB)
+              802.11n, HT40, MCS 7, @17 dBm             —         30.0         27
+              1      EVM                                    7-2             EVM
+                   802.11
+
+
+7.1.2 Wi-Fi           (RX)
+802.11b           (PER)          8% 802.11g/n               10%
+
+                                        7-4.
+
+
+
+                                                      (dBm)        (dBm)    (dBm)
+              802.11b, 1 Mbps                               —       98.2           —
+              802.11b, 2 Mbps                               —       95.6           —
+              802.11b, 5.5 Mbps                             —       92.8           —
+              802.11b, 11 Mbps                              —        88.5          —
+              802.11g, 6 Mbps                               —       93.0           —
+              802.11g, 9 Mbps                               —       92.0           —
+              802.11g, 12 Mbps                              —       90.8           —
+              802.11g, 18 Mbps                              —        88.5          —
+              802.11g, 24 Mbps                              —       85.5           —
+              802.11g, 36 Mbps                              —       82.2           —
+              802.11g, 48 Mbps                              —        78.0          —
+              802.11g, 54 Mbps                              —        76.2          —
+              802.11n, HT20, MCS 0                          —       93.0           —
+              802.11n, HT20, MCS 1                          —       90.6           —
+              802.11n, HT20, MCS 2                          —        88.4          —
+              802.11n, HT20, MCS 3                          —        84.8          —
+              802.11n, HT20, MCS 4                          —        81.6          —
+              802.11n, HT20, MCS 5                          —        77.4          —
+              802.11n, HT20, MCS 6                          —        75.6          —
+              802.11n, HT20, MCS 7                          —        74.2          —
+              802.11n, HT40, MCS 0                          —       90.0           —
+              802.11n, HT40, MCS 1                          —        87.5          —
+              802.11n, HT40, MCS 2                          —       85.0           —
+              802.11n, HT40, MCS 3                          —       82.0           —
+              802.11n, HT40, MCS 4                          —        78.5          —
+              802.11n, HT40, MCS 5                          —        74.4          —
+              802.11n, HT40, MCS 6                          —        72.5          —
+              802.11n, HT40, MCS 7                          —        71.2          —
+
+
+
+
+                                                31           ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+5
+
+
+                                         7-5.
+
+
+
+                                                          (dBm)      (dBm)      (dBm)
+        802.11b, 1 Mbps                                       —           5        —
+        802.11b, 11 Mbps                                      —           5        —
+        802.11g, 6 Mbps                                       —           5        —
+        802.11g, 54 Mbps                                      —           0        —
+        802.11n, HT20, MCS 0                                  —           5        —
+        802.11n, HT20, MCS 7                                  —           0        —
+        802.11n, HT40, MCS 0                                  —           5        —
+        802.11n, HT40, MCS 7                                  —           0        —
+
+
+                                         7-6.
+
+
+
+                                                           (dB)       (dB)      (dB)
+        802.11b, 1 Mbps                                       —          35        —
+        802.11b, 11 Mbps                                      —          35        —
+        802.11g, 6 Mbps                                       —           31       —
+        802.11g, 54 Mbps                                      —           14       —
+        802.11n, HT20, MCS 0                                  —           31       —
+        802.11n, HT20, MCS 7                                  —           13       —
+        802.11n, HT40, MCS 0                                  —           19       —
+        802.11n, HT40, MCS 7                                  —           8        —
+
+
+7.2
+                                  7-7.
+
+
+
+                                                     2402 ~ 2480 MHz
+                                                     24.0 ~ 20.0 dBm
+
+
+7.2.1                  (TX)
+
+                          7-8.                  -            - 1 Mbps
+
+
+
+                   |fn |n=0, 1, 2, ..k                        —         2.50            —   kHz
+                   |f0 − fn |                                 —         2.00            —   kHz
+                   |fn − fn−5 |                               —          1.40           —   kHz
+                   |f1 − f0 |                                 —          1.00           —   kHz
+                   ∆ f 1avg                                   —       249.00            —   kHz
+                   ∆ f 2max
+                                                              —        198.00           —   kHz
+                           99.9%          ∆ f 2max
+
+
+
+                                                32                ESP32-S3-WROOM-1 & WROOM-1U     v1.8
+5
+
+
+                           7-8 –
+
+
+    ∆ f 2avg /∆ f 1avg                 —         0.86       —         —
+    ± 2 MHz                            —      37.00         —    dBm
+    ± 3 MHz                            —      42.00         —    dBm
+    > ± 3 MHz                          —      44.00         —    dBm
+
+
+         7-9.                    -    - 2 Mbps
+
+
+
+    |fn |n=0, 1, 2, ..k                —         2.50       —     kHz
+    |f0 − fn |                         —         2.00       —     kHz
+    |fn − fn−5 |                       —         1.40       —     kHz
+    |f1 − f0 |                         —         1.00       —     kHz
+    ∆ f 1avg                           —     499.00         —     kHz
+    ∆ f 2max
+                                       —     416.00         —     kHz
+            99.9%         ∆ f 2max
+    ∆ f 2avg /∆ f 1avg                 —         0.89       —         —
+    ± 4 MHz                            —      42.00         —    dBm
+    ± 5 MHz                            —      44.00         —    dBm
+    > ± 5 MHz                          —      47.00         —    dBm
+
+
+        7-10.                 -       - 125 Kbps
+
+
+
+    |fn |n=0, 1, 2, ..k                —         0.80       —     kHz
+    |f0 − fn |                         —         1.00       —     kHz
+    |fn − fn−3 |                       —         0.30       —     kHz
+    |f0 − f3 |                         —         1.00       —     kHz
+    ∆ f 1avg                           —     248.00         —     kHz
+    ∆ f 1max
+                                       —    222.00          —     kHz
+            99.9%         ∆ f 1max
+    ± 2 MHz                            —      37.00         —    dBm
+    ± 3 MHz                            —      42.00         —    dBm
+    > ± 3 MHz                          —      44.00         —    dBm
+
+
+       7-11.                 -        - 500 Kbps
+
+
+
+    |fn |n=0, 1, 2, ..k                —         0.80       —     kHz
+    |f0 − fn |                         —         1.00       —     kHz
+    |fn − fn−3 |                       —         0.85       —     kHz
+    |f0 − f3 |                         —         0.34       —     kHz
+    ∆ f 2avg                           —     213.00         —     kHz
+    ∆ f 2max
+                                       —     196.00         —     kHz
+            99.9%         ∆ f 2max
+
+
+
+                                 33     ESP32-S3-WROOM-1 & WROOM-1U       v1.8
+5
+
+
+                                            7-11 –
+
+
+                          ± 2 MHz                           —      37.00          —   dBm
+                          ± 3 MHz                           —     42.00           —   dBm
+                          > ± 3 MHz                         —      44.00          —   dBm
+
+
+
+7.2.2                        (RX)
+
+                             7-12.                -         - 1 Mbps
+
+
+
+        @30.8% PER                   —                             —       96.5       —     dBm
+             @30.8% PER              —                             —          8       —     dBm
+             C/I                     F = F0 MHz                    —          8       —     dB
+                                     F = F0 + 1 MHz                —          4       —     dB
+                                     F = F0 – 1 MHz                —          4       —     dB
+                                     F = F0 + 2 MHz                —        23        —     dB
+                                     F = F0 – 2 MHz                —        23        —     dB
+                   C/I
+                                     F = F0 + 3 MHz                —        34        —     dB
+                                     F = F0 – 3 MHz                —        34        —     dB
+                                     F > F0 + 3 MHz                —        36        —     dB
+                                     F > F0 – 3 MHz                —         37       —     dB
+                                     —                             —        36        —     dB
+                                     F = Fimage + 1 MHz            —        39        —     dB
+                                     F = Fimage – 1 MHz            —        34        —     dB
+                                     30 MHz ~ 2000 MHz             —         12       —     dBm
+                                     2003 MHz ~ 2399 MHz           —         18       —     dBm
+                                     2484 MHz ~ 2997 MHz           —         16       —     dBm
+                                     3000 MHz ~ 12.75 GHz          —         10       —     dBm
+                                     —                             —        29        —     dBm
+                             7-13.                -         - 2 Mbps
+
+
+
+        @30.8% PER                   —                             —        92        —     dBm
+             @30.8% PER              —                             —          3       —     dBm
+           C/I                       F = F0 MHz                    —          8       —     dB
+                                     F = F0 + 2 MHz                —          4       —     dB
+                                     F = F0 – 2 MHz                —          4       —     dB
+                                     F = F0 + 4 MHz                —         27       —     dB
+                                     F = F0 – 4 MHz                —         27       —     dB
+                   C/I
+                                     F = F0 + 6 MHz                —        38        —     dB
+                                     F = F0 – 6 MHz                —        38        —     dB
+                                     F > F0 + 6 MHz                —         41       —     dB
+                                     F > F0 – 6 MHz                —         41       —     dB
+
+
+
+
+                                                  34         ESP32-S3-WROOM-1 & WROOM-1U          v1.8
+5
+
+
+                                     7-13 –
+
+
+                              —                              —         27       —    dB
+                              F = Fimage + 2 MHz             —        38        —    dB
+                              F = Fimage – 2 MHz             —          4       —    dB
+                              30 MHz ~ 2000 MHz              —         15       —    dBm
+                              2003 MHz ~ 2399 MHz            —         21       —    dBm
+                              2484 MHz ~ 2997 MHz            —         21       —    dBm
+                              3000 MHz ~ 12.75 GHz           —          9       —    dBm
+                              —                              —        29        —    dBm
+
+
+
+                      7-14.             -            - 125 Kbps
+
+
+
+    @30.8% PER                —                              —      103.5       —    dBm
+         @30.8% PER           —                              —          8       —    dBm
+         C/I                  F = F0 MHz                     —          4       —    dB
+                              F = F0 + 1 MHz                 —          1       —    dB
+                              F = F0 – 1 MHz                 —          2       —    dB
+                              F = F0 + 2 MHz                 —        26        —    dB
+                              F = F0 – 2 MHz                 —        26        —    dB
+               C/I
+                              F = F0 + 3 MHz                 —        36        —    dB
+                              F = F0 – 3 MHz                 —        39        —    dB
+                              F > F0 + 3 MHz                 —        42        —    dB
+                              F > F0 – 3 MHz                 —        43        —    dB
+                              —                              —        42        —    dB
+                              F = Fimage + 1 MHz             —        43        —    dB
+                              F = Fimage – 1 MHz             —        36        —    dB
+
+
+
+                      7-15.             -            - 500 Kbps
+
+
+
+    @30.8% PER                —                              —       100        —    dBm
+         @30.8% PER           —                              —          8       —    dBm
+         C/I                  F = F0 MHz                     —          4       —    dB
+                              F = F0 + 1 MHz                 —          1       —    dB
+                              F = F0 – 1 MHz                 —         0        —    dB
+                              F = F0 + 2 MHz                 —        24        —    dB
+                              F = F0 – 2 MHz                 —        24        —    dB
+               C/I
+                              F = F0 + 3 MHz                 —         37       —    dB
+                              F = F0 – 3 MHz                 —        39        —    dB
+                              F > F0 + 3 MHz                 —        38        —    dB
+                              F > F0 – 3 MHz                 —        42        —    dB
+                              —                              —        38        —    dB
+
+
+
+
+                                            35         ESP32-S3-WROOM-1 & WROOM-1U         v1.8
+5
+
+
+           7-15 –
+
+
+    F = Fimage + 1 MHz         —        42        —    dB
+    F = Fimage – 1 MHz         —         37       —    dB
+
+
+
+
+               36        ESP32-S3-WROOM-1 & WROOM-1U        v1.8
+                                                                                                                                                                                                                                                                                                                     5
+                              8
+                                                                          PSRAM                                                     eFuse                     VDD_SPI                                   3.3 V       1.8 V                                        VDD_SPI                                    GPIO45
+                                                                                                                                    GPIO45
+                                                        5                                                    4                                                        3                                                 2                                                        1
+
+
+
+                                                                                                                                     GND
+
+
+                                                                                                                               GND                          GND
+                                                                                                                                            Y1
+
+
+
+
+                                                                                                                                     4
+
+
+
+                                                                                                                                                 3
+                                                                                                                                      GND
+
+
+
+                                                                                                                                                 GND XOUT
+                                                                                The values of C1 and C4 vary with              C1                            C4
+                                  D                                                                                                                                                                                                                                                                            D
+                                                                                the selection of the crystal.                 TBD                            TBD                  VDD33                         VDD33        VDD33 GND                                                                GND
+
+
+
+
+                                                                                                                                      XIN
+                                                                                                                                                                                                                                                  U3           ESP32-S3-WROOM-1
+                                                                                The value of R4 varies with the                                                                                                                                                                          41
+                                                                                                                                                                                                                                                                               EPAD
+
+
+
+
+                                                                                                                                     1
+
+
+
+                                                                                                                                                 2
+                                                                                actual PCB board. R4 could be a                                                                                                                             1
+                                                                                                                                                                                                                                                  GND                           GND
+                                                                                                                                                                                                                                                                                         40
+                                                                                                                                                                                     R1                                                     2                                            39        GPIO1
+                                                                                resistor or inductor, the initial                                                                                                   D1         CHIP_PU      3     3V3                            IO1     38        GPIO2
+                                                                                value is suggested to be 24 nH.                               GND                                    10K(NC)                        ESD        GPIO4        4     EN                             IO2     37        U0TXD
+                                      VDD33                                                                                          40MHz(±10ppm)                                                                             GPIO5        5     IO4                          TXD0      36        U0RXD
+                                                                                                                                                                                                   GPIO46                      GPIO6        6     IO5                          RXD0      35        GPIO42
+                                                                                                                                                                                                   GPIO45                      GPIO7        7     IO6                           IO42     34        GPIO41
+                                                                                                                                                                                                   U0RXD                       GPIO15       8     IO7                           IO41     33        GPIO40
+                                                                  C3                  C2                                                                                            R3         499 U0TXD        GND            GPIO16       9     IO15                          IO40     32        GPIO39
+                                                                                                                                                                                                   GPIO42                      GPIO17      10     IO16                          IO39     31        GPIO38
+                                                                  1uF                10nF                                                                                                          GPIO41                      GPIO18      11     IO17                          IO38     30        GPIO37
+
+
+
+
+                                                                                                                               0
+                                                                                                                                                                                                   GPIO40                      GPIO8       12     IO18                          IO37     29        GPIO36
+                                      VDD33                                                                                                                                                        GPIO39                      GPIO19      13     IO8                           IO36     28        GPIO35
+                                                                   GND                 GND                            GND                                                                          GPIO38                      GPIO20      14     IO19                          IO35     27        GPIO0
+                                                                      L1             2.0nH(0.1nH)                                                                                                                                                 IO20                           IO0
+
+
+
+
+                                                                                                                               R4
+
+
+
+
+                                                                                                                                                                                                                                                   IO46
+
+                                                                                                                                                                                                                                                   IO10
+                                                                                                                                                                                                                                                   IO11
+                                                                                                                                                                                                                                                   IO12
+                                                                                                                                                                                                                                                   IO13
+                                                                                                                                                                                                                                                   IO14
+                                                                                                                                                                                                                                                   IO21
+                                                                                                                                                                                                                                                   IO47
+                                                                                                                                                                                                                                                   IO48
+                                                                                                                                                                                                                                                   IO45
+                                        C6                  C7          C8            C9                                                                                            C10
+
+
+
+
+                                                                                                                                                                                                                                                   IO3
+
+                                                                                                                                                                                                                                                   IO9
+                                  C                                                                                                                                                                                                                                                                            C
+37
+
+
+
+
+                                                                                                                                                                                                     VDD33
+
+
+                                                                                                                      57
+
+
+                                                                                                                             56
+                                                                                                                             55
+                                                                                                                             54
+                                                                                                                             53
+                                                                                                                             52
+                                                                                                                             51
+                                                                                                                             50
+                                                                                                                             49
+                                                                                                                             48
+                                                                                                                             47
+                                                                                                                             46
+                                                                                                                             45
+                                                                                                                             44
+                                                                                                                             43
+                                        10uF                1uF         0.1uF       0.1uF                                                                                           0.1uF
+
+
+
+
+                                                                                                                                                                                                                                                  15
+                                                                                                                                                                                                                                                  16
+                                                                                                                                                                                                                                                  17
+                                                                                                                                                                                                                                                  18
+                                                                                                                                                                                                                                                  19
+                                                                                                                                                                                                                                                  20
+                                                                                                                                                                                                                                                  21
+                                                                                                                                                                                                                                                  22
+                                                                                                                                                                                                                                                  23
+                                                                                                                                                                                                                                                  24
+                                                                                                                                                                                                                                                  25
+                                                                                                                                                                                                                                                  26
+                                                                                                                                   VDDA
+                                                                                                                                   VDDA
+                                                                                                                       GND
+
+
+
+
+                                                                                                                                  U0RXD
+                                                                                                                                  U0TXD
+                                                                                                                                   MTMS
+
+
+                                                                                                                                   MTDO
+                                                                                                                                   MTCK
+                                                                                                                                 XTAL_P
+                                                                                                                                 XTAL_N
+                                                                                                                                 GPIO46
+                                                                                                                                 GPIO45
+
+
+
+                                                                                                                                    MTDI
+                                                                                                                             VDD3P3_CPU
+
+
+                                                                                                                                 GPIO38
+                                      GND               GND        GND                 GND                                                                                        GND
+
+
+
+
+                                                                                                                                                                                                                                                  GPIO46
+
+                                                                                                                                                                                                                                                  GPIO10
+                                                                                                                                                                                                                                                  GPIO11
+                                                                                                                                                                                                                                                  GPIO12
+                                                                                                                                                                                                                                                  GPIO13
+                                                                                                                                                                                                                                                  GPIO14
+                                                                                                                                                                                                                                                  GPIO21
+                                                                                                                                                                                                                                                  GPIO47
+                                                                                                                                                                                                                                                  GPIO48
+                                                                                                                                                                                                                                                  GPIO45
+                                                                                                                                                                                                                                                  GPIO3
+
+                                                                                                                                                                                                                                                  GPIO9
+                                      ANT1        50 ohm Impedance Control
+                                              1   RF_ANT                 L2          TBD      LNA_IN     1                                                                   42                      GPIO37
+                                              2                                                          2       LNA_IN                                             GPIO37   41                      GPIO36
+                                                                                                                 VDD3P3                                             GPIO36
+                                                            L3    C11                C12
+                                                                                              CHIP_PU
+                                                                                                         3
+                                                                                                                 VDD3P3                                             GPIO35
+                                                                                                                                                                             40                      GPIO35                                 ESP32-S3-WROOM-1(pin-out)
+                                      PCB_ANT                                                            4                                                                   39
+                                                            TBD   TBD                TBD      GPIO0      5       CHIP_PU                                            GPIO34   38
+ESP32-S3-WROOM-1 & WROOM-1U
+
+
+
+
+                                                                                              GPIO1      6       GPIO0                                              GPIO33   37                      GPIO47
+                                                                                              GPIO2      7       GPIO1                                            SPICLK_P   36                      GPIO48                                                    VDD_SPI
+                                                  GND              GND                 GND    GPIO3      8       GPIO2                                            SPICLK_N   35   R16        0       SPID
+                                                            C5                                                   GPIO3                                                SPID
+                                                                                              GPIO4      9                                                                   34   R15        0       SPIQ
+                                                                                                                 GPIO4                                                SPIQ
+
+
+
+
+                                                                                                                                                                                                                                                                 8
+                                                            TBD                               GPIO5     10                                                                   33   R10        0       SPICLK
+                                                                                              GPIO6     11       GPIO5                                              SPICLK   32                      SPICS0
+                                                                                                                 GPIO6                                              SPICS0
+
+
+
+
+                                                                                                                                                                                                                                                                 VDD
+                                                                                              GPIO7     12                                                                   31   R14        0       SPIWP                               SPICS0     1                             5      SPID
+                                                                                              GPIO8     13       GPIO7                                               SPIWP   30   R13        0       SPIHD                                               /CS               DI
+                                  B                     GND                                                                                                                                                                                                                                                    B
+                                                                                              GPIO9     14       GPIO8                                               SPIHD   29                                                          SPICLK     6                             2      SPIQ
+                                                                                                                 GPIO9                                             VDD_SPI                                                                               CLK              DO
+                                                                                                                             VDD3P3_RTC
+
+
+
+
+                                      The values of L3, C5, C11, L2 and C12
+                                                                                                                             XTAL_32K_N
+                                                                                                                             XTAL_32K_P
+
+
+
+
+                                                                                                                                                                                                                                         SPIHD      7                             3      SPIWP
+                                      vary with the actual PCB board.                                                                                                                                                                                    /HOLD            /WP
+
+
+
+
+                                                                                                                                                                                                                                                                 GND
+                                                                                                                                                                                    C13        C14 VDD_SPI
+                                                                                                                             GPIO10
+                                                                                                                             GPIO11
+                                                                                                                             GPIO12
+                                                                                                                             GPIO13
+                                                                                                                             GPIO14
+
+
+
+                                                                                                                             GPIO17
+                                                                                                                             GPIO18
+                                                                                                                             GPIO19
+                                                                                                                             GPIO20
+                                                                                                                             GPIO21
+                                                                                                                             SPICS1
+
+
+
+
+                                      NC: No component.                                                                                                                             0.1uF      1uF                                                       U2            FLASH
+
+
+
+
+                                                                                                                                                                                                                                                                 4
+                                                                                                                 U1                                           ESP32-S3
+                                                                                                                             15
+                                                                                                                             16
+                                                                                                                             17
+                                                                                                                             18
+                                                                                                                             19
+                                                                                                                             20
+                                                                                                                             21
+                                                                                                                             22
+                                                                                                                             23
+                                                                                                                             24
+                                                                                                                             25
+                                                                                                                             26
+                                                                                                                             27
+                                                                                                                             28
+
+
+
+
+                                                                                             VDD33                                                            ESP32-S3R2          GND       GND                                                                  GND
+                                                                                                                                                              ESP32-S3R8
+                                                                                                                                                              ESP32-S3R16V
+
+                                                                                                                  C15
+                                                                                                                             GPIO10
+                                                                                                                             GPIO11
+                                                                                                                             GPIO12
+                                                                                                                             GPIO13
+                                                                                                                             GPIO14
+
+                                                                                                                                       GPIO15
+                                                                                                                                       GPIO16
+                                                                                                                                       GPIO17
+                                                                                                                                       GPIO18
+                                                                                                                                       GPIO19
+                                                                                                                                       GPIO20
+                                                                                                                                       GPIO21
+
+
+
+
+                                                                                                                 0.1uF
+
+
+                                                                                                                      GND
+
+                                  A                                                                                                                                                                                                                                                                            A
+
+
+                                                                                                                                       8-1. ESP32-S3-WROOM-1
+v1.8
+
+
+
+
+                                                                                                                                                                                                                    Title
+                                                                                                                                                                                                                               <ESP32-S3-WROOM-1>
+
+                                                                                                                                                                                                                    Size     Page Name                                  Rev
+                                                                                                                                                                                                                        A4     <02_ESP32-S3-WROOM-1>                            Confidential and Proprietary
+                                                                                                                                                                                                                                                                         V1.4
+                                                                                                                                                                                                                    Date:        Tuesday, November 21, 2023             Sheet        2        of      2
+                                                        5                                                    4                                                        3                                                 2                                                        1
+                                               5                                                     4                                                        3                                               2                                                         1
+
+
+
+
+                                                                                                                                                                                                                                                                                                          5
+                                                                                                                             GND
+
+
+                                                                                                                       GND                          GND
+                                                                                                                                    Y1
+
+
+
+
+                                                                                                                             4
+
+
+
+                                                                                                                                         3
+                                                                                                                              GND
+
+
+
+                                                                                                                                         GND XOUT
+                                                                        The values of C1 and C4 vary with              C1                            C4
+                              D                                                                                                                                                                                                                                                                       D
+                                                                        the selection of the crystal.                 TBD                            TBD                  VDD33                       VDD33        VDD33 GND                                                                 GND
+
+
+
+
+                                                                                                                              XIN
+                                                                                                                                                                                                                                        U3          ESP32-S3-WROOM-1U
+                                                                        The value of R4 varies with the                                                                                                                                                                         41
+                                                                                                                                                                                                                                                                      EPAD
+
+
+
+
+                                                                                                                             1
+
+
+
+                                                                                                                                         2
+                                                                        actual PCB board. R4 could be a                                                                                                                           1
+                                                                                                                                                                                                                                        GND                            GND
+                                                                                                                                                                                                                                                                                40
+                                                                                                                                                                             R1                                                   2                                             39        GPIO1
+                                                                        resistor or inductor, the initial                                                                                                 D1         CHIP_PU      3     3V3                             IO1     38        GPIO2
+                                                                        value is suggested to be 24 nH.                               GND                                    10K(NC)                      ESD        GPIO4        4     EN                              IO2     37        U0TXD
+                                  VDD33                                                                                      40MHz(±10ppm)                                                                           GPIO5        5     IO4                           TXD0      36        U0RXD
+                                                                                                                                                                                           GPIO46                    GPIO6        6     IO5                           RXD0      35        GPIO42
+                                                                                                                                                                                           GPIO45                    GPIO7        7     IO6                            IO42     34        GPIO41
+                                                                                                                                                                                           U0RXD                     GPIO15       8     IO7                            IO41     33        GPIO40
+                                                          C3                  C2                                                                                            R3         499 U0TXD      GND            GPIO16       9     IO15                           IO40     32        GPIO39
+                                                                                                                                                                                           GPIO42                    GPIO17      10     IO16                           IO39     31        GPIO38
+                                                          1uF                10nF                                                                                                          GPIO41                    GPIO18      11     IO17                           IO38     30        GPIO37
+
+
+
+
+                                                                                                                       0
+                                                                                                                                                                                           GPIO40                    GPIO8       12     IO18                           IO37     29        GPIO36
+                                  VDD33                                                                                                                                                    GPIO39                    GPIO19      13     IO8                            IO36     28        GPIO35
+                                                            GND                GND                            GND                                                                          GPIO38                    GPIO20      14     IO19                           IO35     27        GPIO0
+                                                               L1            2.0nH(0.1nH)                                                                                                                                               IO20                            IO0
+
+
+
+
+                                                                                                                       R4
+
+
+
+
+                                                                                                                                                                                                                                         IO46
+
+                                                                                                                                                                                                                                         IO10
+                                                                                                                                                                                                                                         IO11
+                                                                                                                                                                                                                                         IO12
+                                                                                                                                                                                                                                         IO13
+                                                                                                                                                                                                                                         IO14
+                                                                                                                                                                                                                                         IO21
+                                                                                                                                                                                                                                         IO47
+                                                                                                                                                                                                                                         IO48
+                                                                                                                                                                                                                                         IO45
+                                      C6            C7          C8            C9                                                                                            C10
+
+
+
+
+                                                                                                                                                                                                                                         IO3
+
+                                                                                                                                                                                                                                         IO9
+                              C                                                                                                                                                                                                                                                                       C
+                                                                                                                                                                                             VDD33
+
+
+
+
+                                                                                                              57
+
+
+                                                                                                                     56
+                                                                                                                     55
+                                                                                                                     54
+                                                                                                                     53
+                                                                                                                     52
+                                                                                                                     51
+                                                                                                                     50
+                                                                                                                     49
+                                                                                                                     48
+                                                                                                                     47
+                                                                                                                     46
+                                                                                                                     45
+                                                                                                                     44
+                                                                                                                     43
+                                      10uF          1uF         0.1uF       0.1uF                                                                                           0.1uF
+
+
+
+
+                                                                                                                                                                                                                                        15
+                                                                                                                                                                                                                                        16
+                                                                                                                                                                                                                                        17
+                                                                                                                                                                                                                                        18
+                                                                                                                                                                                                                                        19
+                                                                                                                                                                                                                                        20
+                                                                                                                                                                                                                                        21
+                                                                                                                                                                                                                                        22
+                                                                                                                                                                                                                                        23
+                                                                                                                                                                                                                                        24
+                                                                                                                                                                                                                                        25
+                                                                                                                                                                                                                                        26
+                                                                                                                           VDDA
+                                                                                                                           VDDA
+                                                                                                               GND
+
+
+
+
+                                                                                                                          U0RXD
+                                                                                                                          U0TXD
+                                                                                                                           MTMS
+
+
+                                                                                                                           MTDO
+                                                                                                                           MTCK
+                                                                                                                         XTAL_P
+                                                                                                                         XTAL_N
+                                                                                                                         GPIO46
+                                                                                                                         GPIO45
+
+
+
+                                                                                                                            MTDI
+                                                                                                                     VDD3P3_CPU
+
+
+                                                                                                                         GPIO38
+                                  GND              GND      GND                GND                                                                                        GND
+
+
+
+
+                                                                                                                                                                                                                                        GPIO46
+
+                                                                                                                                                                                                                                        GPIO10
+                                                                                                                                                                                                                                        GPIO11
+                                                                                                                                                                                                                                        GPIO12
+                                                                                                                                                                                                                                        GPIO13
+                                                                                                                                                                                                                                        GPIO14
+                                                                                                                                                                                                                                        GPIO21
+                                                                                                                                                                                                                                        GPIO47
+                                                                                                                                                                                                                                        GPIO48
+                                                                                                                                                                                                                                        GPIO45
+                                                                                                                                                                                                                                        GPIO3
+
+                                                                                                                                                                                                                                        GPIO9
+                                                   50 ohm Impedance Control
+                                           1       RF_ANT        L2          TBD      LNA_IN     1                                                                   42                      GPIO37
+                                                                                                 2       LNA_IN                                             GPIO37   41                      GPIO36
+                                                                                                         VDD3P3                                             GPIO36
+                                           ANT1           C11                C12                 3
+                                                                                                         VDD3P3                                             GPIO35
+                                                                                                                                                                     40                      GPIO35                              ESP32-S3-WROOM-1U(pin-out)
+                                  2
+
+                                      3
+
+
+
+
+                                                                                      CHIP_PU    4                                                                   39
+                                           CONN           TBD                TBD      GPIO0      5       CHIP_PU                                            GPIO34   38
+                                                                                      GPIO1      6       GPIO0                                              GPIO33   37                      GPIO47
+38
+
+
+
+
+                                                                                      GPIO2      7       GPIO1                                            SPICLK_P   36                      GPIO48                                                  VDD_SPI
+                                  GND                       GND                GND    GPIO3      8       GPIO2                                            SPICLK_N   35   R16        0       SPID
+                                                                                      GPIO4      9       GPIO3                                                SPID   34   R15        0       SPIQ
+                                                                                                         GPIO4                                                SPIQ
+
+
+
+
+                                                                                                                                                                                                                                                       8
+                                  The values of C11, L2 and C12                       GPIO5     10
+                                                                                                         GPIO5                                              SPICLK
+                                                                                                                                                                     33   R10        0       SPICLK
+                                                                                      GPIO6     11                                                                   32                      SPICS0
+                                  vary with the actual PCB board.                                        GPIO6                                              SPICS0
+
+
+
+
+                                                                                                                                                                                                                                                        VDD
+                                                                                      GPIO7     12                                                                   31   R14        0       SPIWP                             SPICS0     1                              5      SPID
+                                                                                      GPIO8     13       GPIO7                                               SPIWP   30   R13        0       SPIHD                                             /CS                DI
+                              B                                                                                                                                                                                                                                                                       B
+                                                                                                         GPIO8                                               SPIHD
+                                  NC: No component.                                   GPIO9     14
+                                                                                                         GPIO9                                             VDD_SPI
+                                                                                                                                                                     29                                                        SPICLK     6
+                                                                                                                                                                                                                                               CLK               DO
+                                                                                                                                                                                                                                                                         2      SPIQ
+
+                                                                                                                     VDD3P3_RTC
+
+                                                                                                                     XTAL_32K_N
+                                                                                                                     XTAL_32K_P
+                                                                                                                                                                                                                               SPIHD      7                              3      SPIWP
+                                                                                                                                                                                                                                               /HOLD             /WP
+
+
+
+
+                                                                                                                                                                                                                                                        GND
+                                                                                                                                                                            C13        C14 VDD_SPI
+                                                                                                                     GPIO10
+                                                                                                                     GPIO11
+                                                                                                                     GPIO12
+                                                                                                                     GPIO13
+                                                                                                                     GPIO14
+
+
+
+                                                                                                                     GPIO17
+                                                                                                                     GPIO18
+                                                                                                                     GPIO19
+                                                                                                                     GPIO20
+                                                                                                                     GPIO21
+                                                                                                                     SPICS1
+ESP32-S3-WROOM-1 & WROOM-1U
+
+
+
+
+                                                                                                                                                                            0.1uF      1uF                                                     U2             FLASH
+
+
+
+
+                                                                                                                                                                                                                                                       4
+                                                                                                         U1                                           ESP32-S3
+                                                                                                                     15
+                                                                                                                     16
+                                                                                                                     17
+                                                                                                                     18
+                                                                                                                     19
+                                                                                                                     20
+                                                                                                                     21
+                                                                                                                     22
+                                                                                                                     23
+                                                                                                                     24
+                                                                                                                     25
+                                                                                                                     26
+                                                                                                                     27
+                                                                                                                     28
+                                                                                     VDD33                                                            ESP32-S3R2          GND       GND                                                                GND
+                                                                                                                                                      ESP32-S3R8
+                                                                                                                                                      ESP32-S3R16V
+
+                                                                                                          C15
+                                                                                                                     GPIO10
+                                                                                                                     GPIO11
+                                                                                                                     GPIO12
+                                                                                                                     GPIO13
+                                                                                                                     GPIO14
+
+                                                                                                                               GPIO15
+                                                                                                                               GPIO16
+                                                                                                                               GPIO17
+                                                                                                                               GPIO18
+                                                                                                                               GPIO19
+                                                                                                                               GPIO20
+                                                                                                                               GPIO21
+
+
+
+
+                                                                                                         0.1uF
+
+
+                                                                                                              GND
+
+                              A                                                                                                                                                                                                                                                                       A
+
+
+                                                                                                                                    8-2. ESP32-S3-WROOM-1U
+                                                                                                                                                                                                          Title
+                                                                                                                                                                                                                     <ESP32-S3-WROOM-1U>
+
+                                                                                                                                                                                                          Size     Page Name                                   Rev
+                                                                                                                                                                                                              A4     <02_ESP32-S3-WROOM-1U>                            Confidential and Proprietary
+                                                                                                                                                                                                                                                                V1.5
+                                                                                                                                                                                                          Date:        Tuesday, November 21, 2023              Sheet        2        of      2
+                                               5                                                     4                                                        3                                               2                                                         1
+v1.8
+    9
+
+
+
+    9
+                                                                           JTAG         UART
+
+    VDD33                                                           GND                                          GND                VDD33
+                                                                                                                                                  JP1
+                                                                            ESP32-S3-WROOM-1/ESP32-S3-WROOM-1U                                1
+                                                                                                            41                                2    1
+          C1            C3                       R1       TBD                1                        EPAD 40                                 3    2
+                                                                             2 GND                     GND 39        IO1                      4    3
+          22uF          0.1uF                    C2       TBD       EN       3 3V3                      IO1 38       IO2                           4
+                                     GND
+                                                                    IO4      4 EN                       IO2 37       TXD0                         UART
+        GND        GND                                              IO5      5 IO4                    TXD0 36        RXD0            GND          JP2
+                   C4 12pF(NC)                                      IO6      6 IO5                    RXD0 35        IO42            TMS      1
+        GND                                X1: ESR = Max. 70 K      IO7      7 IO6                     IO42 34       IO41            TDI      2    1
+                                      R2
+
+
+
+
+                                                                                IO7                    IO41 33                                     2
+                             1
+
+
+
+
+                    X1                         R3      0(NC)        IO15     8                                       IO40            TDO      3
+                                               R5      0(NC)        IO16     9 IO15                    IO40 32       IO39            TCK      4    3
+         32.768KHz(NC)
+                                                                    IO17    10 IO16                    IO39 31       IO38                          4
+                                                                            11 IO17                    IO38 30
+                                      NC
+
+
+
+
+                                                                                                                                     GND
+                             2
+
+
+
+
+                                                                    IO18                                             IO37                         JTAG
+        GND
+                   C7    12pF(NC)                                   IO8     12 IO18                    IO37 29       IO36                          JP4
+                                                                    IO19    13 IO8                     IO36 28       IO35                     2
+                                                                    IO20    14 IO19                    IO35 27       IO0                      1    2
+        JP3                                                                     IO20                    IO0                                        1
+               1        USB_D-               R6           0                                                                                Boot Option
+         1
+
+
+                                                                                   IO46
+
+                                                                                   IO10
+                                                                                   IO11
+                                                                                   IO12
+                                                                                   IO13
+                                                                                   IO14
+                                                                                   IO21
+                                                                                   IO47
+                                                                                   IO48
+                                                                                   IO45
+               2        USB_D+               R4           0
+                                                                                   IO3
+
+                                                                                   IO9
+         2                                                                                                                SW1
+        USB OTG                 C6         C5 NC: No component.                                           U1                        R7        0 EN
+                                                                                  15
+                                                                                  16
+                                                                                  17
+                                                                                  18
+                                                                                  19
+                                                                                  20
+                                                                                  21
+                                                                                  22
+                                                                                  23
+                                                                                  24
+                                                                                  25
+                                                                                  26
+                             TBD           TBD                                                                       C8     0.1uF
+                                                                                  IO46
+
+                                                                                  IO10
+                                                                                  IO11
+                                                                                  IO12
+                                                                                  IO13
+                                                                                  IO14
+                                                                                  IO21
+                                                                                  IO47
+                                                                                  IO48
+                                                                                  IO45
+                                                                                  IO3
+
+                                                                                  IO9
+
+
+
+                                GNDGND                                                                         GND
+
+                                For ESP32-S3-WROOM-1-N16R16V and ESP32-S3-WROOM-1U-N16R16V, IO47/IO48 operates in the 1.8V voltage domain.
+
+
+                                                                           9-1.
+
+
+         • EPAD                                                                   GND                                           EPAD
+
+
+         •                ESP32-S3                                           EN                  RC              RC                      R = 10 kΩ
+              C = 1 µF                                                                                                      ESP32-S3
+                                                              4.5
+
+
+
+
+5                                                     4                                               3                                                  2
+
+
+
+
+                                                                                   39            ESP32-S3-WROOM-1 & WROOM-1U                      v1.8
+10
+
+
+
+10
+                                                                                                                                                    Unit: mm
+
+10.1
+                                              18±0.2                                 3.1±0.15
+                                                                                           0.8
+                                                                                                                                                    Unit: mm
+         6
+
+
+
+
+                                              18±0.2                                 3.1±0.15
+                                                                                           0.8
+
+                                              15.8                                                                                0.9
+                                                                                                                                  0.5
+    25.5±0.2
+
+    40 x 0.9
+    16.51 6
+
+
+
+
+                                    40 x Ø0.55
+
+
+
+
+                                                                                                                                                     3.7
+ 1.27
+
+
+
+
+                                                        17.6
+
+
+
+
+                                                                                                                     40 x 0.9
+                                              15.8                                                                                0.9         3.7
+
+
+
+
+                                                                                                                                10.29
+                                          5
+                                        0.
+
+
+
+
+                                                                                                                                  0.5
+
+
+
+
+                                                                                                                                0.9
+                                     Ø
+ 25.5±0.2
+
+
+
+
+                                                                           1.05
+      1.5
+ 40 x 0.9
+
+
+
+
+                                    40 x Ø0.55                                                                                                        7.5
+ 16.51
+
+
+
+
+                                                                                                                                                     3.7
+                           1.27
+
+
+
+
+                                                        17.6
+
+
+
+
+                                                                                                                     40 x 0.9
+                                           13.97                                                                                             2.015
+                                                                                                                                      1.27 3.7
+
+
+
+
+                                                                                                                                10.29
+                                         5
+                                      0.
+
+
+
+
+                                                                                                                                0.9
+                                    40 x 0.45                                                                                         40 x 0.85
+                                     Ø
+
+
+
+
+                                                               1
+                                                                           1.05
+                  1.5
+
+
+
+
+                                                                                                                                                  7.5
+                                            Top View                                             Side View                        Bottom View
+
+                                           13.97                                                                                      1.27 2.015
+                                    40 x 0.45                  1                                                                      40 x 0.85
+
+                                            Top View                                             Side View                        Bottom View
+                                                                                  ESP32-S3-WROOM-1U Dimensions
+                                                                          10-1. ESP32-S3-WROOM-1
+
+
+                                                                                  ESP32-S3-WROOM-1U Dimensions
+                                                                                                                                                    Unit: mm
+
+
+                                              18±0.2                                 3.2±0.15
+                                                                      3                   0.8
+                                                                                                                                                    Unit: mm
+
+                                    10.75                                                                                         0.9
+                                              18±0.2                                 3.2±0.15                                     0.5
+                         40 x 0.9
+
+
+
+
+                                                                           2.46
+
+
+
+
+                                    40 x Ø0.55                        3                   0.8
+                   19.2±0.2
+
+
+
+
+                                                                                                                                                     3.7
+
+
+
+
+                                    15.65
+                     1.27
+                   16.51
+
+
+
+
+                                                                                                                     40 x 0.9
+
+
+
+
+                                    10.75                                                                                         0.9
+                                                               13.1
+                                                17.5
+
+
+
+
+                                                                                                                                              3.7
+                                                                                                                                      10.29
+                                       5
+
+
+
+
+                                                                                                                                  0.5
+                                                                                                                                0.9
+               0.9
+
+
+
+
+                                     0.
+           40 x1.5
+
+
+
+
+                                                                            1.1
+                                                                           2.46
+                                    Ø
+
+
+
+
+                                    40 x Ø0.55                                                                                                        7.5
+     19.2±0.2
+
+
+
+
+                                                                                                                                                     3.7
+
+
+
+
+                                    15.65
+       1.27
+     16.51
+
+
+
+
+                                                                                                                     40 x 0.9
+
+
+
+
+                                                                                                                                             2.015
+                                                                                                                                      1.27 3.7
+                                                               13.1
+                                                 17.5
+
+
+
+
+                                           13.97
+                                                                                                                                      10.29
+                                        5
+
+
+
+
+                                                                                                                                0.9
+
+
+
+
+                                    40 x 0.45    1.08                                                                                 40 x 0.85
+                                     0.
+ 1.5
+
+
+
+
+                                                                           1.1
+                                    Ø
+
+
+
+
+                                                                                                                                                  7.5
+                                            Top View                                             Side View                        Bottom View
+
+                                           13.97                                                                                      1.27 2.015
+                                    40 x 0.45    1.08                     10-2. ESP32-S3-WROOM-1U                                     40 x 0.85
+
+                                            Top View                                             Side View                        Bottom View
+
+                                                                                   ESP32-S3
+
+
+
+
+                                                                                              40             ESP32-S3-WROOM-1 & WROOM-1U                       v1.8
+10
+
+
+
+10.2
+ESP32-S3-WROOM-1U               10-3
+
+
+     •     (Hirose)     U.FL
+
+     • I-PEX    MHF I
+
+     •         (Amphenol)      AMC
+
+
+
+                                                                 Unit: mm
+
+
+
+
+                                       10-3.
+
+
+ESP32-S3-WROOM-1U
+
+
+                                               41   ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+10
+
+
+TFPD05H08750011
+
+
+
+
+     • 2.4 GHz
+
+     • 50 Ω
+
+     •            2.33 dbi
+
+     •                  10-3
+
+
+
+                                                    EMC
+
+
+
+
+                             42   ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+11 PCB
+
+
+
+11       PCB
+
+11.1      PCB
+
+
+     •      PCB                    PCB                                        11-1 ESP32-S3-WROOM-1               PCB
+           11-2 ESP32-S3-WROOM-1U             PCB
+
+     •      PCB                                        11-1    11-2                                 Autodesk Viewer
+         ESP32-S3-WROOM-1          ESP32-S3-WROOM-1U
+
+     • ESP32-S3-WROOM-1            ESP32-S3-WROOM-1U                3D                             3D          .STEP
+                            .txt
+
+                                            Unit: mm
+                                                        Via for thermal pad
+                                                        Copper
+
+                                                                 18
+
+
+
+
+                                                                                            7.49
+                                                        Antenna Area
+                                                                                              6
+                    40 x1.5
+
+                                             1                                      40
+                                              0.9
+                              40 x0.9
+
+
+
+
+                                              0.5
+                                                                                                        25.5
+                   16.51
+
+
+
+
+                                                 3.7
+
+
+
+
+                                                                                            1.27
+                                                                      0.9
+
+
+
+
+                                                              3.7
+                                                                            10.29
+
+
+
+
+                                                 7.5
+                           1.5
+                           0.5
+
+
+
+
+                                             15                                     26
+
+                                                       0.5    1.27
+                                                       2.015 2.015
+                                                           17.5
+
+
+                                         11-1. ESP32-S3-WROOM-1                 PCB
+
+
+
+
+                                                                43                  ESP32-S3-WROOM-1 & WROOM-1U         v1.8
+
+                   ESP32-S3-WROOM-1U Land Pattern
+11 PCB         ESP32-S3-WROOM-1U Land Pattern
+                                      Unit: mm
+                                                 Via for thermal pad
+                                                 Copper
+                                                         18
+                40 x1.5
+
+                                       1                                    40
+                                        0.9
+
+
+
+
+                                                                                   1.19
+                        40 x0.9
+
+
+                                        0.5
+               16.51
+
+
+
+
+                                           3.7
+
+
+
+
+                                                                                      19.2
+                                                                                   1.27
+                                                              0.9
+                                                   3.7
+
+
+                                                                    10.29
+                       0.5
+                       1.5
+
+
+
+
+                                           7.5
+
+                                       15                                   26
+
+                                                 0.5    1.27
+                                                 2.015 2.015
+                                                     17.5
+
+
+                                  11-2. ESP32-S3-WROOM-1U             PCB
+
+
+
+11.2     PCB
+                   on-board                                                                           PCB
+
+
+   PCB                                              ESP32-S3                        >
+
+
+
+
+                                                    44                  ESP32-S3-WROOM-1 & WROOM-1U         v1.8
+12
+
+
+
+12
+
+12.1
+               (MBB)                     < 40 °C/90%RH
+
+                       MSL     3
+
+                  25±5 °C 60%RH                   168
+
+
+12.2                   (ESD)
+     •             (HBM)     ±2000 V
+
+     •             (CDM) ±500 V
+
+
+12.3
+
+
+                                                  峰值温度：235 – 250 °C
+                                                  峰值时间：30 – 70 s
+               温度 (°C)                            焊接时间：＞ 30 s
+                                                  焊料：锡银铜合⾦⽆铅焊料 (SAC305)
+         250
+
+         230
+         217
+         200
+         180
+
+
+         150
+
+
+
+
+         100
+
+
+
+
+         50
+                 升温区                 预热区                     焊接区                    冷却区
+               25 – 150 °C         150 – 200 °C              ＞ 217 °C               ＜ 180 °C
+         25     60 – 90 s           60 – 120 s               60 – 90 s             –5 ~ –1 °C/s
+                1 – 3 °C/s
+                                                                                                  时间 (s)
+           0           50            100              150      200           250
+
+                                              12-1.
+
+
+
+
+                                                        45           ESP32-S3-WROOM-1 & WROOM-1U           v1.8
+12
+
+
+
+12.4
+
+
+
+
+       46   ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+v0.1 ~ v0.5
+                  Confidential
+       v0.5
+
+v0.5 ~ v1.0
+                  Preliminary
+       v1.0
+
+
+v1.0              —
+                                                (PCN)
+
+              —                  (NRND)1
+
+              —        (EOL)2
+1
+2
+
+
+
+
+                                     47    ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+•     ESP32-S3                   –           ESP32-S3
+•     ESP32-S3                       –         ESP32-S3
+•     ESP32-S3                       –             ESP32-S3
+•     ESP32-S3                           –       ESP32-S3
+•
+    https://espressif.com/zh-hans/support/documents/certificates
+• ESP32-S3            /               (PCN)
+    https://espressif.com/zh-hans/support/documents/pcns?keys=ESP32-S3
+• ESP32-S3            –                  bug
+    https://espressif.com/zh-hans/support/documents/advisories?keys=ESP32-S3
+•
+    https://espressif.com/zh-hans/support/download/documents
+
+
+
+•     ESP32-S3 ESP-IDF                       – ESP-IDF
+• ESP-IDF      GitHub
+    https://github.com/espressif
+• ESP32          –                   (E2E)
+    https://esp32.com/
+• ESP-FAQ –
+    https://espressif.com/projects/esp-faq/zh_CN/latest/index.html
+• The ESP Journal –
+    https://blog.espressif.com/
+• SDK                App        AT
+    https://espressif.com/zh-hans/support/download/sdks-demos
+
+
+
+• ESP32-S3                 – ESP32-S3
+    https://espressif.com/zh-hans/products/socs?id=ESP32-S3
+• ESP32-S3                 – ESP32-S3
+    https://espressif.com/zh-hans/products/modules?id=ESP32-S3
+• ESP32-S3                   – ESP32-S3
+    https://espressif.com/zh-hans/products/devkits?id=ESP32-S3
+• ESP Product Selector                                   –
+    https://products.espressif.com/#/product-selector?language=zh
+
+
+
+•                                            & PCB
+    https://espressif.com/zh-hans/contact-us/sales-questions
+
+
+
+
+                                                             48    ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+                    •
+                    •             5.2
+2026-03-02   v1.8   •     5.2.1.9 SD/MMC
+                    •             6-7
+
+
+                    •         6-5 Active
+2025-11-18   v1.7
+
+                    •             4.5
+                    •             6.5
+                    •         10.2
+2025-07-25   v1.6
+                    •
+                    •
+
+
+                    •         2                                          flash/PSRAM
+2025-06-10   v1.5
+
+
+                    •                    ESP32-S3-WROOM-1-N16R16V             ESP32-S3-WROOM-1U-
+                        N16R16V            ESP32-S3-WROOM-1-N16R16VA            ESP32-S3-WROOM-
+                        1U-N16R16VA
+                    •         1.2
+                    •             1.3
+                    •             Strapping                4
+                    •             5.2
+2024-11-14   v1.4   •                                  6                  7
+
+
+                    •                            PCB                    10             11 PCB
+                                           11.2 PCB
+                    •         11.1 PCB                     ESP32-S3-WROOM-1U           3D
+                    •         12-1
+                    •
+
+
+                    •                     ESP32-S3-WROOM-1-N16R16VA             ESP32-S3-WROOM-
+                        1U-N16R16VA
+                    •         1-2 ESP32-S3-WROOM-1U
+                    •             4.1
+2023-11-24   v1.3
+                    •             8
+                    •             10.1
+                    •
+
+
+
+
+                                            49                 ESP32-S3-WROOM-1 & WROOM-1U      v1.8
+                      •     Strapping
+                      •     6.4
+                      •         7.2.1                         (TX)
+
+
+2023-03-07   v1.2     •     9
+                      •   11.1 PCB
+                      •     12.4
+                      •
+
+
+                      •   1-1       1-2
+2022-07-22   v1.1     •
+
+
+                      •
+                      •   6-7
+2022-04-21   v1.0     •
+                      •     Strapping
+
+
+2021-10-29   v0.6                           revision 1
+2021-07-19   v0.5.1                       revision 0
+
+
+
+
+                                          50             ESP32-S3-WROOM-1 & WROOM-1U   v1.8
+                            URL
+
+
+
+
+Wi-Fi               Wi-Fi         Bluetooth SIG
+
+
+        © 2026
+www.espressif.com
+

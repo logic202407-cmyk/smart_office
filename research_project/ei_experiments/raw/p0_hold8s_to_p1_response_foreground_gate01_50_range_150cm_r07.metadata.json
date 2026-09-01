@@ -1,0 +1,25 @@
+{
+    "schema_version":  "1.0",
+    "trial_id":  "p0_hold8s_to_p1_response_foreground_gate01_50_range_150cm_r07",
+    "operator":  "",
+    "scenario":  "response_latency_foreground_empty_hold_8s_then_actual_human_present_p1_static_after_gate01_50_max_range_150cm",
+    "serial":  {
+                   "port":  "COM13",
+                   "baud":  115200,
+                   "timeout_s":  0.25
+               },
+    "capture_started_utc":  "2026-08-14T03:12:28.0184016Z",
+    "requested_duration_s":  20,
+    "tool":  "tools/ei_capture_serial.ps1",
+    "data_status":  "raw_complete_pending_annotation",
+    "capture_finished_utc":  "2026-08-14T03:12:48.2285326Z",
+    "actual_duration_s":  20.052,
+    "record_counts":  {
+                          "measurement":  0,
+                          "state":  331,
+                          "heartbeat":  0,
+                          "json_other":  0,
+                          "json_non_object":  0,
+                          "non_json":  333
+                      }
+}

@@ -1,0 +1,25 @@
+{
+    "schema_version":  "1.0",
+    "trial_id":  "minimal_fallback_p1_r01",
+    "operator":  "",
+    "scenario":  "current_frame_direct_static_moving_fallback_p1",
+    "serial":  {
+                   "port":  "COM13",
+                   "baud":  115200,
+                   "timeout_s":  0.25
+               },
+    "capture_started_utc":  "2026-08-13T15:46:37.6876122Z",
+    "requested_duration_s":  30,
+    "tool":  "tools/ei_capture_serial.ps1",
+    "data_status":  "raw_complete_pending_annotation",
+    "capture_finished_utc":  "2026-08-13T15:47:07.8370107Z",
+    "actual_duration_s":  30.023,
+    "record_counts":  {
+                          "measurement":  0,
+                          "state":  496,
+                          "heartbeat":  0,
+                          "json_other":  0,
+                          "json_non_object":  0,
+                          "non_json":  799
+                      }
+}

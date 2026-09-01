@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "trial_id": "transition_u_up_u_r01_20260815",
+  "operator": "",
+  "scenario": "timed_transition_0_20_user_only_20_40_rear_observer_40_60_user_only",
+  "transport": {
+    "kind": "tcp",
+    "host": "192.168.1.9",
+    "port": 3333,
+    "timeout_s": 0.25
+  },
+  "capture_started_utc": "2026-08-15T03:50:29.208+00:00",
+  "requested_duration_s": 60.0,
+  "tool": "tools/ei_capture_tcp.py",
+  "data_status": "raw_complete_pending_annotation",
+  "capture_finished_utc": "2026-08-15T03:51:29.220+00:00",
+  "actual_duration_s": 60.015,
+  "record_counts": {
+    "measurement": 0,
+    "state": 992,
+    "heartbeat": 0,
+    "json_other": 991,
+    "json_non_object": 0,
+    "non_json": 0
+  }
+}

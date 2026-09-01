@@ -1,0 +1,24 @@
+{
+    "schema_version":  "1.0",
+    "trial_id":  "distance_050cm_r01",
+    "operator":  "",
+    "scenario":  "distance_static_050cm",
+    "serial":  {
+                   "port":  "COM13",
+                   "baud":  115200,
+                   "timeout_s":  0.25
+               },
+    "capture_started_utc":  "2026-08-13T11:16:19.9898868Z",
+    "requested_duration_s":  30,
+    "tool":  "tools/ei_capture_serial.ps1",
+    "data_status":  "raw_complete_pending_annotation",
+    "capture_finished_utc":  "2026-08-13T11:16:50.1335493Z",
+    "actual_duration_s":  30.022,
+    "record_counts":  {
+                          "state":  496,
+                          "heartbeat":  0,
+                          "json_other":  0,
+                          "json_non_object":  0,
+                          "non_json":  496
+                      }
+}

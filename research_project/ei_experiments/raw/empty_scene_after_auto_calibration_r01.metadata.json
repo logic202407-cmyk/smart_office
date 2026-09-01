@@ -1,0 +1,25 @@
+{
+    "schema_version":  "1.0",
+    "trial_id":  "empty_scene_after_auto_calibration_r01",
+    "operator":  "",
+    "scenario":  "empty_scene_after_ld2410b_auto_noise_calibration",
+    "serial":  {
+                   "port":  "COM13",
+                   "baud":  115200,
+                   "timeout_s":  0.25
+               },
+    "capture_started_utc":  "2026-08-13T14:45:46.2609504Z",
+    "requested_duration_s":  30,
+    "tool":  "tools/ei_capture_serial.ps1",
+    "data_status":  "raw_complete_pending_annotation",
+    "capture_finished_utc":  "2026-08-13T14:46:16.4420291Z",
+    "actual_duration_s":  30.056,
+    "record_counts":  {
+                          "measurement":  0,
+                          "state":  462,
+                          "heartbeat":  0,
+                          "json_other":  0,
+                          "json_non_object":  1,
+                          "non_json":  770
+                      }
+}

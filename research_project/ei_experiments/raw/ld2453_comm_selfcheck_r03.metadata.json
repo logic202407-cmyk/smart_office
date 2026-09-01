@@ -1,0 +1,33 @@
+﻿{
+    "schema_version":  "1.0",
+    "trial_id":  "ld2453_comm_selfcheck_r03",
+    "scenario":  "comm_selfcheck_retry",
+    "transport":  {
+                      "kind":  "serial",
+                      "port":  "COM14",
+                      "baud":  256000
+                  },
+    "capture_started_utc":  "2026-08-17T05:44:46.9885790Z",
+    "capture_finished_utc":  "2026-08-17T05:45:01.8917350Z",
+    "clock_anchors":  [
+                          {
+                              "wall_utc":  "2026-08-17T05:44:46.9885790Z",
+                              "monotonic_ms":  0
+                          },
+                          {
+                              "wall_utc":  "2026-08-17T05:45:01.8917350Z",
+                              "monotonic_ms":  15002
+                          }
+                      ],
+    "record_counts":  {
+                          "ld2453_targets":  0,
+                          "parse_errors":  0
+                      },
+    "target_count_histogram":  {
+                                   "0":  0,
+                                   "1":  0,
+                                   "2":  0,
+                                   "3":  0
+                               },
+    "data_status":  "raw_complete_pending_annotation"
+}
